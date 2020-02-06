@@ -529,6 +529,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1180805554}
   - component: {fileID: 1180805553}
+  - component: {fileID: 1180805556}
+  - component: {fileID: 1180805555}
   m_Layer: 0
   m_Name: ScoreManager
   m_TagString: Untagged
