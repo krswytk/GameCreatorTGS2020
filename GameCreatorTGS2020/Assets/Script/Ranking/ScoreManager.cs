@@ -11,22 +11,22 @@ public class ScoreManager : MonoBehaviour
     public Text[] highscoreGUI = new Text[NUM_MAX];
 
 
-    private int score;
-    private int[] highScore = new int[NUM_MAX];
-    private int tmp;
+    private float score;
+    private float[] highScore = new float[NUM_MAX];
+    private float tmp;
     
 
 
     // 初期化時の処理
     void Start()
     {
-        score = 900;
+        score = GetScore.Score;
        
         // キーを使って値を取得
         // キーがない場合は第二引数の値を取得
         for (int i = 0; i < NUM_MAX; i++)
         {
-            highScore[i] = PlayerPrefs.GetInt("highScoreKey" + i, 0);
+            highScore[i] = PlayerPrefs.GetFloat("highScoreKey" + i, 0);
     
         }
         if (highScore[NUM_MAX - 1] < score)
@@ -40,7 +40,7 @@ public class ScoreManager : MonoBehaviour
         // メソッドが呼ばれたときのキーと値をセットする
         for (int i = 0; i < NUM_MAX; i++)
         {
-            PlayerPrefs.SetInt("highScoreKey" + i, highScore[i]);
+            PlayerPrefs.SetFloat("highScoreKey" + i, highScore[i]);
         }
         // キーと値を保存
         PlayerPrefs.Save();
@@ -60,10 +60,10 @@ public class ScoreManager : MonoBehaviour
                 highScore[i] = highScore[j];
                 highScore[j] = tmp;
             }
-            highscoreGUI[i].text = "" + highScore[i];
+            highscoreGUI[i].text = i + 1 + "位:" + highScore[i];
         }
 
-        scoreGUI.text = "" + score;
+        scoreGUI.text = "貴方のスコア:" + score;
         
         
      
