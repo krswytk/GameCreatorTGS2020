@@ -10,13 +10,10 @@ public class ScoreManager : MonoBehaviour
     public Text scoreGUI;
     public Text[] highscoreGUI = new Text[NUM_MAX];
 
-
     private float score;
     private float[] highScore = new float[NUM_MAX];
     private float tmp;
     
-
-
     // 初期化時の処理
     void Start()
     {
@@ -48,10 +45,7 @@ public class ScoreManager : MonoBehaviour
 
     // 更新
     void Update()
-    {
-
-        
-       
+    {       
         for(int i = 0;i < NUM_MAX; ++i)
         {
             for (int j = i + 1; j < NUM_MAX; ++j)
@@ -62,11 +56,7 @@ public class ScoreManager : MonoBehaviour
             }
             highscoreGUI[i].text = i + 1 + "位:" + highScore[i];
         }
-
         scoreGUI.text = "貴方のスコア:" + score;
-        
-        
-     
     }
 
     public void Reset()
