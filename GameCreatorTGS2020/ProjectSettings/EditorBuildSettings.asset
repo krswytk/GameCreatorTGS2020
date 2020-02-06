@@ -12,6 +12,19 @@ EditorBuildSettings:
     path: Assets/Scenes/Title.unity
     guid: 138ccc369de84234d96791f230615966
   - enabled: 1
+    path: Assets/Scenes/Demo.unity
+    guid: 64ee689d2f8893f4f98c114237fb7503
+  - enabled: 1
     path: Assets/Scenes/Maine.unity
     guid: ea1480f528a5ea9428b4b9ea68a31994
+  - enabled: 1
+    path: Assets/Scenes/Score.unity
+    guid: 0220002a525467947a5f6f0189d37cec
+  - enabled: 1
+    path: Assets/Scenes/Replay.unity
+    guid: 52047ca90dde8d04e9afedd57263c22c
+  - enabled: 1
+    path: Assets/Scenes/Ranking.unity
+    guid: 86f9deeb669f20042a7494bd9ad6596e
+
   m_configObjects: {}
