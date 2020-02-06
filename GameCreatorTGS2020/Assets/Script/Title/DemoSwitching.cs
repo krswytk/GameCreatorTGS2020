@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class TitleSwitching : MonoBehaviour
+public class DemoSwitching : MonoBehaviour
 {
     private float time;
     public float go = 0;
@@ -20,7 +20,7 @@ public class TitleSwitching : MonoBehaviour
         time += Time.deltaTime;
         if (time > go)
         {
-            SceneManager.LoadScene("Title");
+            SceneManager.LoadScene("Demo");
         }
     }
 }
