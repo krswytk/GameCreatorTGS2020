@@ -450,6 +450,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1180805554}
   - component: {fileID: 1180805553}
+  - component: {fileID: 1180805556}
+  - component: {fileID: 1180805555}
   m_Layer: 0
   m_Name: ScoreManager
   m_TagString: Untagged
@@ -488,6 +490,31 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1180805555
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1180805552}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c80182b86f48ce41b4ff1903a5f3fee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  go: 10
+--- !u!114 &1180805556
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1180805552}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 204eb5e66b74fa34e9163f6e5a4d326d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1743448035
 GameObject:
   m_ObjectHideFlags: 0
