@@ -11,16 +11,19 @@ public class GetScore : MonoBehaviour
     void Start()
     {
         Score = 0;
+        Score = Random.value * 100;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey(KeyCode.A))
+        /*if (Input.GetKey(KeyCode.A))
         {
             Score += 1.0f;
             Debug.Log(Score);
-        }
+        }*/
         tex.text =  Score.ToString();
     }
+
+
 }
