@@ -35,14 +35,16 @@ public class TextFade : MonoBehaviour
         Debug.Log(FadeOutBool);
         //this.degree.GetComponent<Text>().text = degreeName; //称号をテキストへ表示　degreeNameは表示させる文字列
 
-        if (FadeOutBool == false)
+       
+        if (FadeOutBool)
+        {
+            Invoke("FadeOut", degreeInTime + 3.0f);
+        }
+        else
         {
             //degreeInTime秒経ったらFadeInを呼ぶ
             Invoke("FadeIn", degreeInTime);
-        }
-        if (FadeOutBool == true)
-        {
-            Invoke("FadeOut", degreeInTime + 3.0f);
+            
         }
        
 
@@ -54,7 +56,7 @@ public class TextFade : MonoBehaviour
         {
             textColor.a += fadeSpeed;　//アルファ値を徐々に＋する
             this.degree.GetComponent<Text>().color = textColor;　//テキストへ反映させる
-            FadeOutBool = true;
+            FadeOutBool = !FadeOutBool;
         }
 
     }

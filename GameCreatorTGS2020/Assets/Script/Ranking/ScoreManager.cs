@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class ScoreManager : MonoBehaviour
 {
-    private const int NUM_MAX = 3;
+    private const int NUM_MAX = 10;
 
     public Text scoreGUI;
     public Text[] highscoreGUI = new Text[NUM_MAX];
