@@ -8,17 +8,30 @@ public class WebCameraTest : MonoBehaviour
     public RawImage rawImage;
     public GameObject Image;
 
-    WebCamTexture webCamTexture;
+
+    public WebCamTexture webCamTexture;
+    public Texture replay;
     bool on = false;
 
     void Start()
     {
         webCamTexture = new WebCamTexture();
-        rawImage.texture = webCamTexture;
     }
 
     void Update()
     {
+        /*
+        foreach (GameObject i in webCamTexture)
+        {
+            Debug.Log(i.name);
+        }*/
+
+        if (Input.GetKey(KeyCode.A))
+        {
+            replay = webCamTexture;
+            rawImage.texture = replay;
+        }
+
         if (on == false)
         {
             if (Input.GetKeyDown(KeyCode.Space))
