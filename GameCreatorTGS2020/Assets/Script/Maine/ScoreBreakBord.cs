@@ -40,7 +40,6 @@ public class ScoreBreakBord : MonoBehaviour
         }*/
         time = 5;
         loop = 0;
-
     }
 
     // Update is called once per frame
@@ -52,11 +51,14 @@ public class ScoreBreakBord : MonoBehaviour
 
         if(time >= 1)
         {
-            animator[loop] = Bords[loop].GetComponent<Animator>();
-            animator[loop].SetBool("Break", true);
-            loop = loop + 1;
-            time = 0;
-            //Debug.Log(Bords[loop]);
+            if (loop <= Score - 1)
+            {
+                animator[loop] = Bords[loop].GetComponent<Animator>();
+                animator[loop].SetBool("Break", true);
+                loop = loop + 1;
+                time = 0;
+                //Debug.Log(Bords[loop]);
+            }
         }
 
         //Debug.Log(time);
