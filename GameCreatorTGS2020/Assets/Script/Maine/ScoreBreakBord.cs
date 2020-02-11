@@ -10,6 +10,9 @@ public class ScoreBreakBord : MonoBehaviour
     private float Score;
 
     private Animator[] animator;
+
+    private float time;
+    private int loop;
     // Start is called before the first frame update
     void Start()
     {
@@ -27,27 +30,35 @@ public class ScoreBreakBord : MonoBehaviour
 
         Score = GetScore.Score;//ベットダイブ時のスコアを毎フレーム取得
 
-        for(int lp = 0;lp < Number; lp++)
+        /*for(int lp = 0;lp < Number; lp++)
         {
             if(lp < Score-1)
             {
                 animator[lp] = Bords[lp].GetComponent<Animator>();
                 animator[lp].SetBool("Break",true);
             }
-        }
+        }*/
+        time = 5;
+        loop = 0;
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey(KeyCode.B))
+
+
+        time += Time.deltaTime;
+
+        if(time >= 1)
         {
-            Bords[0].SetActive(false);
+            animator[loop] = Bords[loop].GetComponent<Animator>();
+            animator[loop].SetBool("Break", true);
+            loop = loop + 1;
+            time = 0;
+            //Debug.Log(Bords[loop]);
         }
 
-
-        Bords[0] = this.GetComponent<InstantiateBord>().GetBords()[0];
-        Debug.Log(Bords[0]);
-
+        //Debug.Log(time);
     }
 }
