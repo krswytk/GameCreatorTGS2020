@@ -13,6 +13,7 @@ public class ScoreManager : MonoBehaviour
     private float score;
     private float[] highScore = new float[NUM_MAX];
     private float tmp;
+    private TextFade TF;
     
     // 初期化時の処理
     void Start()
