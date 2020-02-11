@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class ScoreBreakBord : MonoBehaviour
 {
-
+    private GameObject[] audioobjects;
+    private GameObject[] audioobjects2;
     private GameObject[] Bords;
     private int Number;
     private float Score;
@@ -16,6 +17,8 @@ public class ScoreBreakBord : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        audioobjects = GameObject.FindGameObjectsWithTag("audio");
+        audioobjects2 = GameObject.FindGameObjectsWithTag("audioend");
         Number = this.GetComponent<InstantiateBord>().GetNumber();
         Bords = this.GetComponent<InstantiateBord>().GetBords();
         animator = new Animator[Number];
@@ -53,14 +56,18 @@ public class ScoreBreakBord : MonoBehaviour
         {
             if (loop <= Score - 1)
             {
+                var audioobject = audioobjects[Random.Range(1, 5)];
+                audioobject.GetComponent<AudioSource>().Play();
                 animator[loop] = Bords[loop].GetComponent<Animator>();
                 animator[loop].SetBool("Break", true);
                 loop = loop + 1;
                 time = 0;
                 //Debug.Log(Bords[loop]);
+            }else{
+                var audioobject2 = audioobjects2[0];
+                audioobject2.GetComponent<AudioSource>().Play();
             }
         }
-
         //Debug.Log(time);
     }
 }
