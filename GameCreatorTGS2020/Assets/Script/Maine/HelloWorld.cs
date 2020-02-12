@@ -9,18 +9,19 @@ public class HelloWorld : MonoBehaviour
     public SerialHandler serialHandler;
     public Text text;
 
+    private int val;
     // Use this for initialization
     void Start()
     {
         //信号を受信したときに、そのメッセージの処理を行う
         serialHandler.OnDataReceived += OnDataReceived;
-
+        val = 0;
     }
 
     // Update is called once per frame
     void Update()
     {
-
+        
     }
 
     /*
@@ -30,7 +31,10 @@ public class HelloWorld : MonoBehaviour
     {
         try
         {
-            text.text = message; // シリアルの値をテキストに表示
+            if(val < int.Parse(message)){
+                val = int.Parse(message);
+                text.text = message; // シリアルの値をテキストに表示
+            }
         }
         catch (System.Exception e)
         {
