@@ -28,7 +28,7 @@ public class ScoreBreakBord : MonoBehaviour
 
         /////////////////////////////////////本来Updateのほうが適しているがprtでは処理のためこちらに記入
 
-        Score = GetScore.Score;//ベットダイブ時のスコアを毎フレーム取得
+        
 
         /*for(int lp = 0;lp < Number; lp++)
         {
@@ -46,11 +46,10 @@ public class ScoreBreakBord : MonoBehaviour
     void Update()
     {
 
-
+        Score = GetScore.Score;//ベットダイブ時のスコアを毎フレーム取得
         time += Time.deltaTime;
 
-        if(time >= 1)
-        {
+        
             if (loop <= Score - 1)
             {
                 animator[loop] = Bords[loop].GetComponent<Animator>();
@@ -59,7 +58,7 @@ public class ScoreBreakBord : MonoBehaviour
                 time = 0;
                 //Debug.Log(Bords[loop]);
             }
-        }
+        
 
         //Debug.Log(time);
     }
