@@ -6,23 +6,40 @@ using UnityEngine.UI;
 public class GetScore : MonoBehaviour
 {
     public static float Score;//スコアを格納している変数
-    public Text tex;//
+
+    public SerialHandler serialHandler;
+    public Text text;
     // Start is called before the first frame update
     void Start()
     {
         Score = 0;
-        Score = Random.value * 100;
+        //信号を受信したときに、そのメッセージの処理を行う
+        serialHandler.OnDataReceived += OnDataReceived;
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        /*if (Input.GetKey(KeyCode.A))
-        {
-            Score += 1.0f;
+       
             Debug.Log(Score);
-        }*/
-        tex.text =  Score.ToString();
+        
+        text.text =  Score.ToString();
+    }
+    void OnDataReceived(string message)
+    {
+        try
+        {
+            if (Score < float.Parse(message))
+            {
+                Score = float.Parse(message);
+                text.text = message; // シリアルの値をテキストに表示
+            }
+        }
+        catch (System.Exception e)
+        {
+            Debug.LogWarning(e.Message);
+        }
     }
 
 

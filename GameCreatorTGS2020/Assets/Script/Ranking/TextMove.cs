@@ -4,14 +4,14 @@ using UnityEngine;
 
 public class TextMove : MonoBehaviour
 {
-    private float elapsedaTime;
+
   
    
 
     // Start is called before the first frame update
     void Start()
     {
-        elapsedaTime = 0.0f;
+
       
        
     }
