@@ -3,36 +3,36 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class GetScore : MonoBehaviour
+public class HelloWorld : MonoBehaviour
 {
-    public static float Score;//スコアを格納している変数
 
     public SerialHandler serialHandler;
     public Text text;
-    // Start is called before the first frame update
+
+    private int val;
+    // Use this for initialization
     void Start()
     {
-        Score = 0;
         //信号を受信したときに、そのメッセージの処理を行う
         serialHandler.OnDataReceived += OnDataReceived;
-
+        val = 0;
     }
 
     // Update is called once per frame
     void Update()
     {
-       
-            Debug.Log(Score);
         
-        text.text =  Score.ToString();
     }
+
+    /*
+     * シリアルを受け取った時の処理
+     */
     void OnDataReceived(string message)
     {
         try
         {
-            if (Score < float.Parse(message))
-            {
-                Score = float.Parse(message);
+            if(val < int.Parse(message)){
+                val = int.Parse(message);
                 text.text = message; // シリアルの値をテキストに表示
             }
         }
@@ -41,6 +41,5 @@ public class GetScore : MonoBehaviour
             Debug.LogWarning(e.Message);
         }
     }
-
 
 }
