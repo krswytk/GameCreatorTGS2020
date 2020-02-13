@@ -19,6 +19,13 @@ public class ScoreBreakBord : MonoBehaviour
     float Score_MAX = 0;
     float Score_MIN = 0;
     float Score_NUM = 0;
+    float Score_difference = 0;
+
+    int anim_save=0;
+
+    int anim_Num=0;
+
+    int test = 0;
 
 
     // Start is called before the first frame update
@@ -40,15 +47,50 @@ public class ScoreBreakBord : MonoBehaviour
         /////////////////////////////////////本来Updateのほうが適しているがprtでは処理のためこちらに記入
 
         time = 5;
-        loop = 0;
-
-        Score_MIN = GetScore.Score;
-        
+        loop = 0;    
     }
 
     // Update is called once per frame
     void Update()
     {
+        //animator[test].SetBool("Break", true);
+        //Debug.Log(anim_Num + anim_save - 1);
+        if (anim_Num + anim_save - 1 >= 0)
+        {
+            animator[(anim_Num + anim_save - 1)].SetBool("Break", true);
+        }
+        time += Time.deltaTime;
+
+        if (Score_Check == true)
+        {
+            //Debug.Log(time);
+            //Debug.Log(time_save);
+            //Debug.Log(anim_Num + anim_save);
+
+            if (time < Score)
+            {
+                anim_Num = Mathf.FloorToInt(time);
+            }
+            //Debug.Log(anim_Num + anim_save);
+
+            //animator[anim_Num].SetBool("Break", true);
+            //Debug.Log(anim_Num);
+
+
+            /*for (int lp = 0; lp < Score; lp++)
+           {
+                time_save = time;
+                if (time_save >lp)
+                {
+                  animator[lp].SetBool("Break", true);
+
+                    if(time_save > Score)
+                    {
+                        Score_Check = false;
+                    }
+                }
+           }*/
+        }
 
         if (Score_NUM == 0)//最初のスコア取得
         {
@@ -57,6 +99,7 @@ public class ScoreBreakBord : MonoBehaviour
         }
         else
         {
+            //Debug.Log(anim_Num);
             Score_NUM = GetScore.Score;
         }
 
@@ -64,33 +107,15 @@ public class ScoreBreakBord : MonoBehaviour
 
         if (Score_MAX < Score)
         {
+            Score_difference = Score - Score_MAX;
+            Score_MAX = Score;
             Score_Check = true;
-            Score_MAX = Score;
+            anim_save = anim_Num;
         }
-
-        if (Score_Check == true)
-        {
-            for (int lp = 0; lp < Number; lp++)
-            {
-                if (lp < Score - 1)
-                {
-                    animator[lp].SetBool("Break", true);
-                }
-            }
-            Score_MAX = Score;
-            Score_Check = false;
-        }
-
-
-        time += Time.deltaTime;
-
-        
-            if (loop <= Score - 1)
+        if (loop <= Score - 1)
             {
                 var audioobject = audioobjects[Random.Range(1, 5)];
                 audioobject.GetComponent<AudioSource>().Play();
-                animator[loop] = Bords[loop].GetComponent<Animator>();
-                animator[loop].SetBool("Break", true);
                 loop = loop + 1;
                 time = 0;
                 //Debug.Log(Bords[loop]);
@@ -98,8 +123,11 @@ public class ScoreBreakBord : MonoBehaviour
                 var audioobject2 = audioobjects2[0];
                 audioobject2.GetComponent<AudioSource>().Play();
             }
+<<<<<<< HEAD
 
         
+=======
+>>>>>>> c847964b43a2fc0e9fa5d329689341631f7a5036
         //Debug.Log(time);
     }
 }
