@@ -6,6 +6,8 @@ TagManager:
   tags:
   - audio
   - audioend
+  - EventSystem
+  - BordManeger
   layers:
   - Default
   - TransparentFX

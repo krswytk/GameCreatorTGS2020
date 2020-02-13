@@ -9,7 +9,7 @@ public class ScoreBreakBord : MonoBehaviour
     private GameObject[] Bords;
 
     private int Number;
-    private float Score;
+    public float Score;
 
     private Animator[] animator;
 
@@ -49,7 +49,6 @@ public class ScoreBreakBord : MonoBehaviour
         {
             Bords[lp] = this.GetComponent<InstantiateBord>().GetBords()[lp];
             animator[lp] = Bords[lp].GetComponent<Animator>();
-            break_anim[lp] = Bords[lp].GetComponent<Break_Anime>().Break_borad;
         }
 
         /////////////////////////////////////本来Updateのほうが適しているがprtでは処理のためこちらに記入
@@ -61,19 +60,18 @@ public class ScoreBreakBord : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (anim_Num + anim_save - 1 >= 0)
+        //Debug.Log(anim_Num - 1);
+        if (anim_Num- 1 >= 0)
         {
-            Bords[(anim_Num + anim_save - 1)].GetComponent<Break_Anime>().Break_borad = true;
+            //Bords[(anim_Num + anim_save - 1)].GetComponent<Break_Anime>().Break_borad = true;
+            Bords[(anim_Num- 1)].GetComponent<Break_Anime>().Break_borad = true;
         }
         time += Time.deltaTime;
 
-        if (Score_Check == true)
-        {
-            if (anim_Num < Score)
+        if (anim_Num < Score)
             {
                 anim_Num = Mathf.FloorToInt(time*speed);
             }
-        }
 
         if (Score_NUM == 0)//最初のスコア取得
         {
