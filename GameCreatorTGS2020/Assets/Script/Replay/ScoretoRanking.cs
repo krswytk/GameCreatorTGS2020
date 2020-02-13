@@ -14,7 +14,7 @@ public class ScoretoRanking : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //エンターキーを押してスコア画面にシーン変異
+        //エンターキーを押してランキング画面にシーン変異
         if (Input.GetKey(KeyCode.Return))
             SceneManager.LoadScene("Ranking");
     }
