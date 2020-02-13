@@ -84,8 +84,7 @@ public class ScoreBreakBord : MonoBehaviour
 
         time += Time.deltaTime;
 
-        if(time >= 1)
-        {
+        
             if (loop <= Score - 1)
             {
                 var audioobject = audioobjects[Random.Range(1, 5)];
@@ -99,6 +98,7 @@ public class ScoreBreakBord : MonoBehaviour
                 var audioobject2 = audioobjects2[0];
                 audioobject2.GetComponent<AudioSource>().Play();
             }
+
         }
         //Debug.Log(time);
     }
