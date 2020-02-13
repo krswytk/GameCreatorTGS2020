@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1286812525376417545}
   - component: {fileID: 1286812525376417550}
-  - component: {fileID: 1286812525376417551}
+  - component: {fileID: 3281581143275330281}
   m_Layer: 0
   m_Name: Bord
   m_TagString: Untagged
@@ -80,22 +80,17 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!95 &1286812525376417551
-Animator:
-  serializedVersion: 3
+--- !u!114 &3281581143275330281
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1286812525376417548}
   m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 4434c557358843f48a500a3bfcd49d2f, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c4b5ac7e8e502943b0e9953af98f65c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Before: {fileID: 21300000, guid: a1cb4a430d9ef22438e80483234762aa, type: 3}
+  After: {fileID: 21300000, guid: 20114874db2c5d646babe4479e78c0f4, type: 3}
