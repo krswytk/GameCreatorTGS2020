@@ -1,0 +1,11 @@
+diff a/GameCreatorTGS2020/Assets/Script/Maine/ScoreBreakBord.cs b/GameCreatorTGS2020/Assets/Script/Maine/ScoreBreakBord.cs	(rejected hunks)
+@@ -99,7 +99,8 @@
+                 audioobject2.GetComponent<AudioSource>().Play();
+             }
+ 
+-        }
++        
+         //Debug.Log(time);
+     }
+ }
++
