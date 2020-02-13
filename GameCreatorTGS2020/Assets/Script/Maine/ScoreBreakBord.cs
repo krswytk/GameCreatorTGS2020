@@ -99,7 +99,8 @@ public class ScoreBreakBord : MonoBehaviour
                 audioobject2.GetComponent<AudioSource>().Play();
             }
 
-        }
+        
         //Debug.Log(time);
     }
 }
+
