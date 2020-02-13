@@ -8,7 +8,7 @@ using System.Collections.Generic;
 using UnityEngine.UI;
 
 public class SearchCom : MonoBehaviour {
-  /*  public SerialHandler sh;
+    public SerialHandler sh;
     public String SearchWord; //ハードウェア名(部分一致でおk) 
     private String PortNum;
 
@@ -20,12 +20,13 @@ public class SearchCom : MonoBehaviour {
     /// </summary> 
     void ProcessStart()
     {
-        Process p = new Process
+        //Debug.Log(Directory.GetCurrentDirectory() + @"\GetComDevices.exe");
+        Process p = new Process 
         {
             StartInfo =
             {
                 FileName =Directory.GetCurrentDirectory() + 
-                            @"GetComDevices.exe",
+                            @"\GetComDevices.exe",
                 UseShellExecute = false,
                 RedirectStandardOutput = true,
                 RedirectStandardError = false,
@@ -56,8 +57,9 @@ public class SearchCom : MonoBehaviour {
     //出力が終わったらSerialHandlerの設定用メソッドをたたく 
     private void Process_Exit(object sender, EventArgs e)
     {
+        //Debug.Log(PortNum);
         sh.SetPortName(PortNum);
         Process proc = (Process)sender;
         proc.Kill();
-    }*/
+    }
 }

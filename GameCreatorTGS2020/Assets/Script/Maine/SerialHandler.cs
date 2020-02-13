@@ -8,7 +8,7 @@ public class SerialHandler : MonoBehaviour
     public delegate void SerialDataReceivedEventHandler(string message);
     public event SerialDataReceivedEventHandler OnDataReceived;
 
-    public string portName = "COM3"; // ポート名(Macだと/dev/tty.usbmodem1421など)
+    private string portName; // ポート名(Macだと/dev/tty.usbmodem1421など)
     public int baudRate = 15200;  // ボーレート(Arduinoに記述したものに合わせる)
 
     private SerialPort serialPort_;
@@ -18,17 +18,18 @@ public class SerialHandler : MonoBehaviour
     private string message_;
     private bool isNewMessageReceived_ = false;
 
-    //削除
+    /*削除
     void Awake()
     {
         Open();
     }
-    //削除*/   
+    削除*/   
     /*追加*/
             //portNameを設定した後、ポートを開く 
     public void SetPortName(string Name)
     {
-        portName = @"..." + Name; Open();
+        portName = Name;
+        Open();
     }
     //開くまで少し時間がかかるため、開いているか外からでも確認するため 
     public bool getIsRunning()

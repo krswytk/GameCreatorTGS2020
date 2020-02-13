@@ -537,6 +537,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b950481495e01b2428c721cc3854d9a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sh: {fileID: 0}
+  SearchWord: 
 --- !u!1 &958138500
 GameObject:
   m_ObjectHideFlags: 0
@@ -1109,6 +1111,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1842259511}
   - component: {fileID: 1842259510}
+  - component: {fileID: 1842259512}
   m_Layer: 0
   m_Name: Arudino_Manager
   m_TagString: Untagged
@@ -1128,7 +1131,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc97aa3602fead8409f7b71acf35ee9e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  portName: COM3
+  portName: 
   baudRate: 15200
 --- !u!4 &1842259511
 Transform:
@@ -1144,6 +1147,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1842259512
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1842259509}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b950481495e01b2428c721cc3854d9a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sh: {fileID: 1842259510}
+  SearchWord: A
 --- !u!1 &1899334826
 GameObject:
   m_ObjectHideFlags: 0
