@@ -446,7 +446,7 @@ GameObject:
   - component: {fileID: 690236817}
   m_Layer: 0
   m_Name: EventSystem
-  m_TagString: Untagged
+  m_TagString: EventSystem
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1054,7 +1054,7 @@ GameObject:
   - component: {fileID: 1833714477}
   m_Layer: 0
   m_Name: BordManeger
-  m_TagString: Untagged
+  m_TagString: BordManeger
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1099,6 +1099,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8a6e34c4432352439a66e5763cf8ed4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed: 10
+  break_anim: 
 --- !u!1 &1842259509
 GameObject:
   m_ObjectHideFlags: 0
@@ -1128,8 +1130,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc97aa3602fead8409f7b71acf35ee9e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  portName: COM3
-  baudRate: 15200
+  portName: COM7
+  baudRate: 115200
 --- !u!4 &1842259511
 Transform:
   m_ObjectHideFlags: 0
