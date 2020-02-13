@@ -7,6 +7,7 @@ public class ScoreBreakBord : MonoBehaviour
     private GameObject[] audioobjects;
     private GameObject[] audioobjects2;
     private GameObject[] Bords;
+
     private int Number;
     private float Score;
 
@@ -27,6 +28,12 @@ public class ScoreBreakBord : MonoBehaviour
 
     int test = 0;
 
+    int num = 0;
+
+    public float speed;
+
+    public bool[]  break_anim;
+
 
     // Start is called before the first frame update
     void Start()
@@ -42,6 +49,7 @@ public class ScoreBreakBord : MonoBehaviour
         {
             Bords[lp] = this.GetComponent<InstantiateBord>().GetBords()[lp];
             animator[lp] = Bords[lp].GetComponent<Animator>();
+            break_anim[lp] = Bords[lp].GetComponent<Break_Anime>().Break_borad;
         }
 
         /////////////////////////////////////本来Updateのほうが適しているがprtでは処理のためこちらに記入
@@ -53,43 +61,18 @@ public class ScoreBreakBord : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //animator[test].SetBool("Break", true);
-        //Debug.Log(anim_Num + anim_save - 1);
         if (anim_Num + anim_save - 1 >= 0)
         {
-            animator[(anim_Num + anim_save - 1)].SetBool("Break", true);
+            Bords[(anim_Num + anim_save - 1)].GetComponent<Break_Anime>().Break_borad = true;
         }
         time += Time.deltaTime;
 
         if (Score_Check == true)
         {
-            //Debug.Log(time);
-            //Debug.Log(time_save);
-            //Debug.Log(anim_Num + anim_save);
-
-            if (time < Score)
+            if (anim_Num < Score)
             {
-                anim_Num = Mathf.FloorToInt(time);
+                anim_Num = Mathf.FloorToInt(time*speed);
             }
-            //Debug.Log(anim_Num + anim_save);
-
-            //animator[anim_Num].SetBool("Break", true);
-            //Debug.Log(anim_Num);
-
-
-            /*for (int lp = 0; lp < Score; lp++)
-           {
-                time_save = time;
-                if (time_save >lp)
-                {
-                  animator[lp].SetBool("Break", true);
-
-                    if(time_save > Score)
-                    {
-                        Score_Check = false;
-                    }
-                }
-           }*/
         }
 
         if (Score_NUM == 0)//最初のスコア取得
@@ -99,7 +82,6 @@ public class ScoreBreakBord : MonoBehaviour
         }
         else
         {
-            //Debug.Log(anim_Num);
             Score_NUM = GetScore.Score;
         }
 
@@ -114,16 +96,15 @@ public class ScoreBreakBord : MonoBehaviour
         }
         if (loop <= Score - 1)
             {
-                var audioobject = audioobjects[Random.Range(1, 5)];
-                audioobject.GetComponent<AudioSource>().Play();
+                //var audioobject = audioobjects[Random.Range(1, 5)];
+                //audioobject.GetComponent<AudioSource>().Play();
                 loop = loop + 1;
                 time = 0;
                 //Debug.Log(Bords[loop]);
             }else{
-                var audioobject2 = audioobjects2[0];
-                audioobject2.GetComponent<AudioSource>().Play();
+                //var audioobject2 = audioobjects2[0];
+                //audioobject2.GetComponent<AudioSource>().Play();
             }
-        //Debug.Log(time);
     }
 }
 
