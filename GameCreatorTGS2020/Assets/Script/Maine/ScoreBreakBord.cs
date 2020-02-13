@@ -123,11 +123,6 @@ public class ScoreBreakBord : MonoBehaviour
                 var audioobject2 = audioobjects2[0];
                 audioobject2.GetComponent<AudioSource>().Play();
             }
-<<<<<<< HEAD
-
-        
-=======
->>>>>>> c847964b43a2fc0e9fa5d329689341631f7a5036
         //Debug.Log(time);
     }
 }
