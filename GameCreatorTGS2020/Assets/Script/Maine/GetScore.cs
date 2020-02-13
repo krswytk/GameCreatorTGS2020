@@ -22,9 +22,8 @@ public class GetScore : MonoBehaviour
     void Update()
     {
        
-            Debug.Log(Score);
-        
-        text.text =  Score.ToString();
+        Debug.Log(Score);
+        //text.text =  Score.ToString();
     }
     void OnDataReceived(string message)
     {
