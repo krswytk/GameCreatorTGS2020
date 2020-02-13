@@ -30,7 +30,7 @@ public class GetScore : MonoBehaviour
     }
     void OnDataReceived(string message)
     {
-        Debug.Log(message);
+        //Debug.Log(message);
         try
         {
             //Debug.Log(message);              //ここで最大値をスコアに埋め込んでいる
@@ -42,7 +42,7 @@ public class GetScore : MonoBehaviour
         }
         catch (System.Exception e)
         {
-            Debug.LogWarning(e.Message);
+            //Debug.LogWarning(e.Message);
         }
     }
 
