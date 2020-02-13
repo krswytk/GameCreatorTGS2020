@@ -601,8 +601,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05a743756fc7e8e44bac24a020b3d5db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  serialHandler: {fileID: 0}
-  text: {fileID: 0}
+  serialHandler: {fileID: 1842259510}
+  text: {fileID: 958138502}
 --- !u!1001 &1245087033
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1097,7 +1097,7 @@ GameObject:
   - component: {fileID: 1842259511}
   - component: {fileID: 1842259510}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: Arudino_Manager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1115,7 +1115,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc97aa3602fead8409f7b71acf35ee9e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  portName: COM8
+  portName: COM7
   baudRate: 115200
 --- !u!4 &1842259511
 Transform:
