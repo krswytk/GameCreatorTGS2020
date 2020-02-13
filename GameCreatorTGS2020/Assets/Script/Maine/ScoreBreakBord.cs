@@ -14,6 +14,13 @@ public class ScoreBreakBord : MonoBehaviour
 
     private float time;
     private int loop;
+
+    bool Score_Check=false;
+    float Score_MAX = 0;
+    float Score_MIN = 0;
+    float Score_NUM = 0;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -27,27 +34,52 @@ public class ScoreBreakBord : MonoBehaviour
         for(int lp = 0;lp < Number; lp++)
         {
             Bords[lp] = this.GetComponent<InstantiateBord>().GetBords()[lp];
+            animator[lp] = Bords[lp].GetComponent<Animator>();
         }
 
         /////////////////////////////////////本来Updateのほうが適しているがprtでは処理のためこちらに記入
 
-        Score = GetScore.Score;//ベットダイブ時のスコアを毎フレーム取得
-
-        /*for(int lp = 0;lp < Number; lp++)
-        {
-            if(lp < Score-1)
-            {
-                animator[lp] = Bords[lp].GetComponent<Animator>();
-                animator[lp].SetBool("Break",true);
-            }
-        }*/
         time = 5;
         loop = 0;
+
+        Score_MIN = GetScore.Score;
+        
     }
 
     // Update is called once per frame
     void Update()
     {
+
+        if (Score_NUM == 0)//最初のスコア取得
+        {
+            Score_MIN = GetScore.Score;//スコアの初期値取得
+            Score_NUM = GetScore.Score;
+        }
+        else
+        {
+            Score_NUM = GetScore.Score;
+        }
+
+        Score = Score_NUM - Score_MIN;
+
+        if (Score_MAX < Score)
+        {
+            Score_Check = true;
+            Score_MAX = Score;
+        }
+
+        if (Score_Check == true)
+        {
+            for (int lp = 0; lp < Number; lp++)
+            {
+                if (lp < Score - 1)
+                {
+                    animator[lp].SetBool("Break", true);
+                }
+            }
+            Score_MAX = Score;
+            Score_Check = false;
+        }
 
 
         time += Time.deltaTime;
