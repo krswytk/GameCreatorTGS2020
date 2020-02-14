@@ -752,7 +752,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 31c3f9045eff81c47b6a02c60ee3af2f, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 97f2d6b36a1c7f04dbb8036d5c8d0b75, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -999,7 +999,7 @@ MonoBehaviour:
   delay: 0
   style: 0
   playOnAwake: 1
-  m_progress: 0.120639
+  m_progress: 0.32063898
   usePosition: 1
   useRotation: 0
   useScale: 0
