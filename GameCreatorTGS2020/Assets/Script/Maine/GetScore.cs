@@ -81,7 +81,7 @@ public class GetScore : MonoBehaviour
                 //Debug.Log("Max");
                 if (yuudati[10] - noise > yuudati[0] && yuudati[10] - noise > yuudati[20])
                 {
-                    Score = (int)total * 0.1f;
+                    Score = total;// * 0.1f;
 
                     Debug.Log("FullMax:" + Score);
                 }

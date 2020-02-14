@@ -438,8 +438,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   serialHandler: {fileID: 1842259510}
-  ver: {fileID: 0}
-  noise: 2
+  ver: {fileID: 2121548906}
+  noise: 1
 --- !u!1 &958138500
 GameObject:
   m_ObjectHideFlags: 0
