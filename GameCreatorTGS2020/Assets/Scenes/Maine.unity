@@ -151,7 +151,7 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -426,7 +426,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_BackGroundColor: {r: 1, g: 1, b: 1, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -568,9 +568,8 @@ GameObject:
   - component: {fileID: 690236814}
   - component: {fileID: 690236813}
   - component: {fileID: 690236812}
-  - component: {fileID: 690236815}
   - component: {fileID: 690236816}
-  - component: {fileID: 690236817}
+  - component: {fileID: 690236815}
   m_Layer: 0
   m_Name: EventSystem
   m_TagString: EventSystem
@@ -652,20 +651,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   serialHandler: {fileID: 1842259510}
   text: {fileID: 958138502}
---- !u!114 &690236817
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 690236811}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b950481495e01b2428c721cc3854d9a1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sh: {fileID: 0}
-  SearchWord: 
 --- !u!1 &958138500
 GameObject:
   m_ObjectHideFlags: 0
