@@ -9,6 +9,7 @@ public class SceneManegers : MonoBehaviour
     static private int SceneNumber;
     static private float time;
     public float outtime  = 10;
+    private static float scanTime;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,16 +19,43 @@ public class SceneManegers : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-//////////////////////////////////////////////////////ここからボタンを使用したシーン移動についてのスクリプト
-///エンターもしくはマウス左クリックで次のシーンに移動
-///スペースでランキング後の移動シーンの変更　デフォルトはタイトル
-///左シフトでタイトルもしくはメインへの強制移動　移動先は上記記述を参照
-        if(Input.GetKey(KeyCode.KeypadEnter) || Input.GetMouseButton(0))
+        //////////////////////////////////////////////////////ここからボタンを使用したシーン移動についてのスクリプト
+        ///エンターもしくはマウス左クリックで次のシーンに移動
+        ///スペースでランキング後の移動シーンの変更　デフォルトはタイトル
+        ///左シフトでタイトルもしくはメインへの強制移動　移動先は上記記述を参照
+        ///
+        scanTime += Time.deltaTime;
+        Debug.Log(scanTime);
+        if (Input.GetKey(KeyCode.KeypadEnter) || Input.GetMouseButton(0))
         {
+            if (scanTime < 3.0f) return;
+            else scanTime = 0;
             SceneNumber++;
-            if(SceneNumber == 6)
+
+            if (SceneNumber == 1)
             {
-                if(TitleSwitch == true)
+                FadeManager.Instance.LoadScene("Demo", 2.0f);
+            }
+            if (SceneNumber == 2)
+            {
+                FadeManager.Instance.LoadScene("Main", 2.0f);
+            }
+            if (SceneNumber == 3)
+            {
+                FadeManager.Instance.LoadScene("Score", 2.0f);
+            }
+            if (SceneNumber == 4)
+            {
+                FadeManager.Instance.LoadScene("Replay", 2.0f);
+            }
+            if (SceneNumber == 5)
+            {
+                FadeManager.Instance.LoadScene("Ranking", 2.0f);
+            }
+            if (SceneNumber == 6)
+            {
+               
+                if (TitleSwitch == true)
                 {
                     SceneNumber = 0;
                     FadeManager.Instance.LoadScene("Title", 2.0f);
@@ -46,6 +74,7 @@ public class SceneManegers : MonoBehaviour
             SetTitleSwotch();
         }else if (Input.GetKey(KeyCode.LeftShift))
         {
+
             if (TitleSwitch == true)
             {
                 SceneNumber = 0;
