@@ -283,9 +283,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 519420028}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b90ffd0c97a2f39419d22e72e4d10460, type: 3}
+  m_Script: {fileID: 11500000, guid: 6c5d07e8fe107e54abfa65ceb3d7c777, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Score: {fileID: 1833714474}
 --- !u!20 &519420031
 Camera:
   m_ObjectHideFlags: 0
@@ -717,6 +718,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Score: 0
+  anim_Num: 0
   speed: 10
   break_anim: 
 --- !u!1 &1842259509
