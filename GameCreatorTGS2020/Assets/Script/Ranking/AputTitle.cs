@@ -23,11 +23,11 @@ public class AputTitle : MonoBehaviour
         {
             if (TitleSwitch == true)
             {
-                SceneManager.LoadScene("Title");
+                FadeManager.Instance.LoadScene("Title", 2.0f);
             }
             else
             {
-                SceneManager.LoadScene("Maine");
+                FadeManager.Instance.LoadScene("Maine", 2.0f);
             }
         }
     }

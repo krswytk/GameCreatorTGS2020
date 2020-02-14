@@ -16,7 +16,7 @@ public class TitleSwitchingClic : MonoBehaviour
         //Debug.Log(time);
         if (Input.GetMouseButton(0))
         {
-            SceneManager.LoadScene("Title");
+            FadeManager.Instance.LoadScene("Title", 2.0f);
         }
     }
 }
