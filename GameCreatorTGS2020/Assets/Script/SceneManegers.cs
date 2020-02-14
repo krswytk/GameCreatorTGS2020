@@ -31,6 +31,7 @@ public class SceneManegers : MonoBehaviour
             if (scanTime < 3.0f) return;
             else scanTime = 0;
             SceneNumber++;
+
             if (SceneNumber == 1)
             {
                 FadeManager.Instance.LoadScene("Demo", 2.0f);
