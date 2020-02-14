@@ -27,7 +27,27 @@ public class SceneManegers : MonoBehaviour
             SceneNumber++;
             if(SceneNumber == 5)
             {
-                if(TitleSwitch == true)
+                if(SceneNumber == 1)
+                {
+                    FadeManager.Instance.LoadScene("Demo", 2.0f);
+                }
+                if (SceneNumber == 2)
+                {
+                    FadeManager.Instance.LoadScene("Main", 2.0f);
+                }
+                if (SceneNumber == 3)
+                {
+                    FadeManager.Instance.LoadScene("Score", 2.0f);
+                }
+                if (SceneNumber == 4)
+                {
+                    FadeManager.Instance.LoadScene("Replay", 2.0f);
+                }
+                if (SceneNumber == 5)
+                {
+                    FadeManager.Instance.LoadScene("Ranking", 2.0f);
+                }
+                if (TitleSwitch == true)
                 {
                     SceneNumber = 0;
                     FadeManager.Instance.LoadScene("Title", 2.0f);
