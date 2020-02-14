@@ -17,6 +17,6 @@ public class ScoreSceneChange : MonoBehaviour
     {
         //エンターキーを押してスコア画面にシーン変異
         if (Input.GetKey(KeyCode.Return))
-            SceneManager.LoadScene("Score");
+            FadeManager.Instance.LoadScene("Score", 2.0f);
     }
 }

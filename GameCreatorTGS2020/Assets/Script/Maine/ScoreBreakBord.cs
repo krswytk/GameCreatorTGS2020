@@ -7,13 +7,34 @@ public class ScoreBreakBord : MonoBehaviour
     private GameObject[] audioobjects;
     private GameObject[] audioobjects2;
     private GameObject[] Bords;
+
     private int Number;
-    private float Score;
+    public float Score;
 
     private Animator[] animator;
 
     private float time;
     private int loop;
+
+    bool Score_Check=false;
+    float Score_MAX = 0;
+    float Score_MIN = 0;
+    float Score_NUM = 0;
+    float Score_difference = 0;
+
+    int anim_save=0;
+
+    int anim_Num=0;
+
+    int test = 0;
+
+    int num = 0;
+
+    public float speed;
+
+    public bool[]  break_anim;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -27,47 +48,61 @@ public class ScoreBreakBord : MonoBehaviour
         for(int lp = 0;lp < Number; lp++)
         {
             Bords[lp] = this.GetComponent<InstantiateBord>().GetBords()[lp];
+            animator[lp] = Bords[lp].GetComponent<Animator>();
         }
 
         /////////////////////////////////////本来Updateのほうが適しているがprtでは処理のためこちらに記入
 
-        Score = GetScore.Score;//ベットダイブ時のスコアを毎フレーム取得
-
-        /*for(int lp = 0;lp < Number; lp++)
-        {
-            if(lp < Score-1)
-            {
-                animator[lp] = Bords[lp].GetComponent<Animator>();
-                animator[lp].SetBool("Break",true);
-            }
-        }*/
         time = 5;
-        loop = 0;
+        loop = 0;    
     }
 
     // Update is called once per frame
     void Update()
     {
-
-
+        //Debug.Log(anim_Num - 1);
+        if (anim_Num- 1 >= 0)
+        {
+            //Bords[(anim_Num + anim_save - 1)].GetComponent<Break_Anime>().Break_borad = true;
+            Bords[(anim_Num- 1)].GetComponent<Break_Anime>().Break_borad = true;
+        }
         time += Time.deltaTime;
 
-        if(time >= 1)
-        {
-            if (loop <= Score - 1)
+        if (anim_Num < Score)
             {
-                var audioobject = audioobjects[Random.Range(1, 5)];
-                audioobject.GetComponent<AudioSource>().Play();
-                animator[loop] = Bords[loop].GetComponent<Animator>();
-                animator[loop].SetBool("Break", true);
+                anim_Num = Mathf.FloorToInt(time*speed);
+            }
+
+        if (Score_NUM == 0)//最初のスコア取得
+        {
+            Score_MIN = GetScore.Score;//スコアの初期値取得
+            Score_NUM = GetScore.Score;
+        }
+        else
+        {
+            Score_NUM = GetScore.Score;
+        }
+
+        Score = Score_NUM - Score_MIN;
+
+        if (Score_MAX < Score)
+        {
+            Score_difference = Score - Score_MAX;
+            Score_MAX = Score;
+            Score_Check = true;
+            anim_save = anim_Num;
+        }
+        if (loop <= Score - 1)
+            {
+                //var audioobject = audioobjects[Random.Range(1, 5)];
+                //audioobject.GetComponent<AudioSource>().Play();
                 loop = loop + 1;
                 time = 0;
                 //Debug.Log(Bords[loop]);
             }else{
-                var audioobject2 = audioobjects2[0];
-                audioobject2.GetComponent<AudioSource>().Play();
+                //var audioobject2 = audioobjects2[0];
+                //audioobject2.GetComponent<AudioSource>().Play();
             }
-        }
-        //Debug.Log(time);
     }
 }
+
