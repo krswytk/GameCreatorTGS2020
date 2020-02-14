@@ -20,7 +20,7 @@ public class TitleSwitching : MonoBehaviour
         time += Time.deltaTime;
         if (time > go)
         {
-            SceneManager.LoadScene("Title");
+            FadeManager.Instance.LoadScene("Title", 2.0f);
         }
     }
 }

@@ -17,17 +17,17 @@ public class AputTitle : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        TitleSwitch = TitleSwhic.GetTitleSwotch();
+        TitleSwitch = SceneManegers.GetTitleSwotch();
         time += Time.deltaTime;
         if (time > go)
         {
             if (TitleSwitch == true)
             {
-                SceneManager.LoadScene("Title");
+                FadeManager.Instance.LoadScene("Title", 2.0f);
             }
             else
             {
-                SceneManager.LoadScene("Maine");
+                FadeManager.Instance.LoadScene("Maine", 2.0f);
             }
         }
     }

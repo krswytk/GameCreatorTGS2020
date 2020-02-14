@@ -11,9 +11,9 @@ public class Done_BGScroller : MonoBehaviour
     void Update()
     {
         transform.position -= new Vector3(Time.deltaTime * speed, 0);
-        if (transform.position.x <= -11.0f)
+        if (transform.position.x <= -21.5f)
         {
-            transform.position = new Vector3(11.0f, 0);
+            transform.position = new Vector3(21.5f, 0);
         }
     }
 }

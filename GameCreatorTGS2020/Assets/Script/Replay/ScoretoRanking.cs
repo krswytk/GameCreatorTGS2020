@@ -16,6 +16,6 @@ public class ScoretoRanking : MonoBehaviour
     {
         //エンターキーを押してランキング画面にシーン変異
         if (Input.GetKey(KeyCode.Return))
-            SceneManager.LoadScene("Ranking");
+            FadeManager.Instance.LoadScene("Ranking", 2.0f);
     }
 }
