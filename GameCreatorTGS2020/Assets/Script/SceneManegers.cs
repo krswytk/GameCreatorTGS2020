@@ -5,10 +5,10 @@ using UnityEngine.SceneManagement;
 
 public class SceneManegers : MonoBehaviour
 {
-    static private bool TitleSwitch = true;
+    static private bool TitleSwitch = false;
     static private int SceneNumber;
     static private float time;
-    public float outtime  = 10;
+    public float outtime = 10;
     private static float scanTime;
     // Start is called before the first frame update
     void Start()
@@ -25,7 +25,14 @@ public class SceneManegers : MonoBehaviour
         ///左シフトでタイトルもしくはメインへの強制移動　移動先は上記記述を参照
         ///
         scanTime += Time.deltaTime;
-        //Debug.Log(scanTime);
+
+        if (SceneNumber == 0)
+        {
+            time = 0;
+            time += Time.deltaTime;
+        }
+
+
         if (Input.GetKey(KeyCode.KeypadEnter) || Input.GetMouseButton(0))
         {
             if (scanTime < 3.0f)
@@ -40,11 +47,13 @@ public class SceneManegers : MonoBehaviour
 
             if (SceneNumber == 1)
             {
-                FadeManager.Instance.LoadScene("Maine", 2.0f);
+                FadeManager.Instance.LoadScene("Demo", 2.0f);
             }
             if (SceneNumber == 2)
             {
-                FadeManager.Instance.LoadScene("Title", 2.0f);
+
+                FadeManager.Instance.LoadScene("Maine", 2.0f);
+
             }
             if (SceneNumber == 3)
             {
@@ -60,7 +69,7 @@ public class SceneManegers : MonoBehaviour
             }
             if (SceneNumber == 6)
             {
-               
+
                 if (TitleSwitch == true)
                 {
                     SceneNumber = 0;
@@ -69,7 +78,7 @@ public class SceneManegers : MonoBehaviour
                 else
                 {
                     SceneNumber = 2;
-                    FadeManager.Instance.LoadScene("Main", 2.0f);
+                    FadeManager.Instance.LoadScene("Maine", 2.0f);
                 }
                 //SceneManager.LoadScene(SceneNumber);
             }
@@ -78,7 +87,8 @@ public class SceneManegers : MonoBehaviour
         else if (Input.GetKey(KeyCode.Space))
         {
             SetTitleSwotch();
-        }else if (Input.GetKey(KeyCode.LeftShift))
+        }
+        else if (Input.GetKey(KeyCode.LeftShift))
         {
 
             if (TitleSwitch == true)
@@ -89,7 +99,7 @@ public class SceneManegers : MonoBehaviour
             else
             {
                 SceneNumber = 2;
-                FadeManager.Instance.LoadScene("Main", 2.0f);
+                FadeManager.Instance.LoadScene("Maine", 2.0f);
             }
 
             //SceneManager.LoadScene(SceneNumber);
@@ -97,7 +107,7 @@ public class SceneManegers : MonoBehaviour
         //////////////////////////////////////////////////////////////////////////ここまでキーマウスによるシーン移動
         ///ここより各位ｓｃｒｉｐｔの時間経過による移動記述
         time += Time.deltaTime;
-        if(SceneNumber == 0)
+        if (SceneNumber == 0)
         {
             if (Input.GetKey(KeyCode.Escape))
             {
