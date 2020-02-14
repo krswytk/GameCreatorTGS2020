@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class SceneManegers : MonoBehaviour
 {
-    static private bool TitleSwitch = true;
+    static private bool TitleSwitch = false;
     static private int SceneNumber;
     static private float time;
     public float outtime  = 10;
@@ -25,8 +25,12 @@ public class SceneManegers : MonoBehaviour
         ///左シフトでタイトルもしくはメインへの強制移動　移動先は上記記述を参照
         ///
         scanTime += Time.deltaTime;
-        time += Time.deltaTime;
-        Debug.Log(time);
+        if (SceneNumber == 1)
+        {
+            time = 0;
+            time += Time.deltaTime;
+        }
+    
         if (Input.GetKey(KeyCode.KeypadEnter) || Input.GetMouseButton(0))
         {
             if (scanTime < 3.0f)
@@ -45,7 +49,7 @@ public class SceneManegers : MonoBehaviour
             }
             if (SceneNumber == 2)
             {
-                FadeManager.Instance.LoadScene("Main", 2.0f);
+                FadeManager.Instance.LoadScene("Maine", 2.0f);
             }
             if (SceneNumber == 3)
             {
@@ -70,7 +74,7 @@ public class SceneManegers : MonoBehaviour
                 else
                 {
                     SceneNumber = 2;
-                    FadeManager.Instance.LoadScene("Main", 2.0f);
+                    FadeManager.Instance.LoadScene("Maine", 2.0f);
                 }
                 //SceneManager.LoadScene(SceneNumber);
             }
@@ -90,7 +94,7 @@ public class SceneManegers : MonoBehaviour
             else
             {
                 SceneNumber = 2;
-                FadeManager.Instance.LoadScene("Main", 2.0f);
+                FadeManager.Instance.LoadScene("Maine", 2.0f);
             }
 
             //SceneManager.LoadScene(SceneNumber);
