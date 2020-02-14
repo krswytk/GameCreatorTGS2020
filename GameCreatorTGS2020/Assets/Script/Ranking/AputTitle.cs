@@ -17,7 +17,7 @@ public class AputTitle : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        TitleSwitch = TitleSwhic.GetTitleSwotch();
+        TitleSwitch = SceneManegers.GetTitleSwotch();
         time += Time.deltaTime;
         if (time > go)
         {
