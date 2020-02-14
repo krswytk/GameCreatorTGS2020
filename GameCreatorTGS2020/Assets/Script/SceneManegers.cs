@@ -28,8 +28,14 @@ public class SceneManegers : MonoBehaviour
         Debug.Log(scanTime);
         if (Input.GetKey(KeyCode.KeypadEnter) || Input.GetMouseButton(0))
         {
-            if (scanTime < 3.0f) return;
-            else scanTime = 0;
+            if (scanTime < 3.0f)
+            {
+                return;
+            }
+            else
+            {
+                scanTime = 0;
+            }
             SceneNumber++;
             if (SceneNumber == 1)
             {
