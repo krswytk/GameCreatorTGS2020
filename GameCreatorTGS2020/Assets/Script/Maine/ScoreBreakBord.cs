@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class ScoreBreakBord : MonoBehaviour
 {
@@ -31,9 +32,22 @@ public class ScoreBreakBord : MonoBehaviour
     int num = 0;
 
     public float speed;
+    float Break_speed;
+
+    float add_num=0;
+    int total=0;
+
 
     public bool[]  break_anim;
 
+    bool Total_Check = false;
+
+    int anim_break;
+
+    float time_test = 0;
+
+    float B_speed=200;
+    float count=0;
 
     // Start is called before the first frame update
     void Start()
@@ -63,15 +77,49 @@ public class ScoreBreakBord : MonoBehaviour
         //Debug.Log(anim_Num - 1);
         if (anim_Num- 1 >= 0)
         {
-            //Bords[(anim_Num + anim_save - 1)].GetComponent<Break_Anime>().Break_borad = true;
             Bords[(anim_Num- 1)].GetComponent<Break_Anime>().Break_borad = true;
+            if((anim_Num - 1)%2==0) Bords[(anim_Num - 1)].GetComponent<Break_Anime>().Sound_stop = true;
         }
-        time += Time.deltaTime;
-
-        if (anim_Num < Score)
+        
+        if ((anim_Num < Score)&&(anim_Num>-1))
+        {
+            if (anim_Num == 0)//最初の板割れ時
             {
-                anim_Num = Mathf.FloorToInt(time*speed);
+                Break_speed = Score;
+                Score_difference = Score;
             }
+            else
+            {
+
+            }
+
+            if (Total_Check == false)
+            {
+                total = 0;
+                for (int lp = 0; lp < Score_difference+1; lp++)
+                {
+                    total = total + lp;
+                }
+                Total_Check = true;
+            }
+
+            if (Break_speed - (total * 30) / (Score_difference * Number * speed) > 5)
+            {
+                Break_speed = Break_speed - (total * 30) / (Score_difference * Number * speed);
+            }
+
+            time += Time.deltaTime;
+
+            B_speed = 1-(1.0f*(Score_difference/ 100));
+
+            if(Score < (anim_Num+5)) add_num = 250;//B_speedが高くなるほど速度が落ちる0.33f
+
+            time_test = time_test + ((Score_difference) / ((add_num) + Score_difference));
+
+            anim_Num = Mathf.FloorToInt(time_test);
+
+
+        }
 
         if (Score_NUM == 0)//最初のスコア取得
         {
@@ -83,25 +131,23 @@ public class ScoreBreakBord : MonoBehaviour
             Score_NUM = GetScore.Score;
         }
 
-        Score = Score_NUM - Score_MIN;
+        Score = Score_NUM;
 
         if (Score_MAX < Score)
         {
             Score_difference = Score - Score_MAX;
+            add_num = 0;
+            B_speed = 200;
+            if (Break_speed<Score) Break_speed = Score_difference;
+
             Score_MAX = Score;
             Score_Check = true;
+            Total_Check = false;
             anim_save = anim_Num;
         }
         if (loop <= Score - 1)
             {
-                //var audioobject = audioobjects[Random.Range(1, 5)];
-                //audioobject.GetComponent<AudioSource>().Play();
                 loop = loop + 1;
-                time = 0;
-                //Debug.Log(Bords[loop]);
-            }else{
-                //var audioobject2 = audioobjects2[0];
-                //audioobject2.GetComponent<AudioSource>().Play();
             }
     }
 }
