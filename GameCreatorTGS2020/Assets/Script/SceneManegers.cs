@@ -40,11 +40,11 @@ public class SceneManegers : MonoBehaviour
 
             if (SceneNumber == 1)
             {
-                FadeManager.Instance.LoadScene("Demo", 2.0f);
+                FadeManager.Instance.LoadScene("Maine", 2.0f);
             }
             if (SceneNumber == 2)
             {
-                FadeManager.Instance.LoadScene("Maine", 2.0f);
+                FadeManager.Instance.LoadScene("Title", 2.0f);
             }
             if (SceneNumber == 3)
             {
