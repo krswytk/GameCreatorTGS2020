@@ -24,6 +24,6 @@ public class My_Score : MonoBehaviour
         n = Mathf.FloorToInt(ScoreNum);
 
         Text uiText = GetComponent<Text>();
-        uiText.text = "Score:"+n;
+        uiText.text = "きみのスコアは:"+n;
     }
 }
