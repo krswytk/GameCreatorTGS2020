@@ -25,7 +25,8 @@ public class SceneManegers : MonoBehaviour
         ///左シフトでタイトルもしくはメインへの強制移動　移動先は上記記述を参照
         ///
         scanTime += Time.deltaTime;
-        Debug.Log(scanTime);
+        time += Time.deltaTime;
+        Debug.Log(time);
         if (Input.GetKey(KeyCode.KeypadEnter) || Input.GetMouseButton(0))
         {
             if (scanTime < 3.0f)
@@ -96,7 +97,7 @@ public class SceneManegers : MonoBehaviour
         }
         //////////////////////////////////////////////////////////////////////////ここまでキーマウスによるシーン移動
         ///ここより各位ｓｃｒｉｐｔの時間経過による移動記述
-        time = Time.deltaTime;
+        
         if(SceneNumber == 0)
         {
             if (Input.GetKey(KeyCode.Escape))
