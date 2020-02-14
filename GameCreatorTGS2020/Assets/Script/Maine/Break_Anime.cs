@@ -10,6 +10,7 @@ public class Break_Anime : MonoBehaviour
     SpriteRenderer MainSpriteRenderer;
 
     public bool Break_borad=false;
+    public bool Sound_stop = false;
     bool sound = false;
 
     AudioSource audioSource;
@@ -25,8 +26,15 @@ public class Break_Anime : MonoBehaviour
         MainSpriteRenderer = this.GetComponent<SpriteRenderer>();
 
         audioSource = this.gameObject.GetComponent<AudioSource>();
-        audioSource.clip = baki1;
         //audioSource.time = 3.1f;
+
+        int sound = Random.Range(0, 4);
+        if (sound == 0) audioSource.clip = baki1;
+        if (sound == 1) audioSource.clip = baki2;
+        if (sound == 2) audioSource.clip = baki3;
+        if (sound == 3) audioSource.clip = baki4;
+        if (sound == 4) audioSource.clip = baki5;
+
     }
 
     // Update is called once per frame
@@ -37,8 +45,8 @@ public class Break_Anime : MonoBehaviour
             if (sound == false)
             {
                 MainSpriteRenderer.sprite = After;
-                audioSource.Play();
                 sound = true;
+                if (Sound_stop == false) audioSource.Play();
             }
         }
     }
