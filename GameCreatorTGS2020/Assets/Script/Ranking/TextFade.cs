@@ -32,7 +32,7 @@ public class TextFade : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(FadeOutBool);
+        //Debug.Log(FadeOutBool);
         //this.degree.GetComponent<Text>().text = degreeName; //称号をテキストへ表示　degreeNameは表示させる文字列
 
        
