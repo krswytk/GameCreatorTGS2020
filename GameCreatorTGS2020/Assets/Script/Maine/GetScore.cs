@@ -9,7 +9,6 @@ public class GetScore : MonoBehaviour
     public static float Score;//スコアを格納している変数
 
     public SerialHandler serialHandler;
-    public Text text;
 
 
     private float[] yuudati = new float[21];
@@ -47,7 +46,6 @@ public class GetScore : MonoBehaviour
         }
         //Debug.Log("Score" + Score);
         //Debug.Log(Score);
-        //text.text =  Score.ToString();
 
         ////////////////気圧のパワーを順番に21個０から格納
         for (int lp = 0; lp < yuudati.Length; lp++)
@@ -107,7 +105,6 @@ public class GetScore : MonoBehaviour
             }
             //Debug.Log("Score" + Score);
             //Debug.Log(Score);
-            //text.text =  Score.ToString();
 
             ////////////////気圧のパワーを順番に21個０から格納
             for (int lp = 0; lp < yuudati.Length; lp++)
@@ -134,14 +131,15 @@ public class GetScore : MonoBehaviour
 
             if (time > 100)
             {
-                Debug.Log(yuudati[10] + "    " + yuudati[10] + "  " + yuudati[10]);
+                //Debug.Log(yuudati[10] + "    " + yuudati[9] + "  " + yuudati[11]);
                 if (yuudati[10] > yuudati[9] && yuudati[10] > yuudati[11])
                 {
                     //Debug.Log("Max");
                     if (yuudati[10] - noise > yuudati[0] && yuudati[10] - noise > yuudati[20])
                     {
-                        Debug.Log("Max");
-                        Score = total;
+                        Score = (int)total*0.1f;
+
+                        Debug.Log("FullMax:" + Score);
                     }
                 }
 

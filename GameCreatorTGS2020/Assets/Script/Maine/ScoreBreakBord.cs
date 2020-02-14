@@ -123,15 +123,15 @@ public class ScoreBreakBord : MonoBehaviour
 
         if (Score_NUM == 0)//最初のスコア取得
         {
-            Score_MIN = GetScore.Score*5;//スコアの初期値取得
-            Score_NUM = GetScore.Score * 5;
+            Score_MIN = GetScore.Score;//スコアの初期値取得
+            Score_NUM = GetScore.Score;
         }
         else
         {
-            Score_NUM = GetScore.Score * 5;
+            Score_NUM = GetScore.Score;
         }
 
-        Score = Score_NUM - Score_MIN;
+        Score = Score_NUM;
 
         if (Score_MAX < Score)
         {
