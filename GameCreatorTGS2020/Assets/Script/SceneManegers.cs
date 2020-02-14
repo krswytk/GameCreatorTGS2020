@@ -30,14 +30,18 @@ public class SceneManegers : MonoBehaviour
                 if(TitleSwitch == true)
                 {
                     SceneNumber = 0;
+                    FadeManager.Instance.LoadScene("Title", 2.0f);
                 }
                 else
                 {
                     SceneNumber = 2;
+                    FadeManager.Instance.LoadScene("Main", 2.0f);
                 }
+                //SceneManager.LoadScene(SceneNumber);
             }
-            SceneManager.LoadScene(SceneNumber);
-        }else if (Input.GetKey(KeyCode.Space))
+
+        }
+        else if (Input.GetKey(KeyCode.Space))
         {
             SetTitleSwotch();
         }else if (Input.GetKey(KeyCode.LeftShift))
@@ -45,13 +49,15 @@ public class SceneManegers : MonoBehaviour
             if (TitleSwitch == true)
             {
                 SceneNumber = 0;
+                FadeManager.Instance.LoadScene("Title", 2.0f);
             }
             else
             {
                 SceneNumber = 2;
+                FadeManager.Instance.LoadScene("Main", 2.0f);
             }
 
-            SceneManager.LoadScene(SceneNumber);
+            //SceneManager.LoadScene(SceneNumber);
         }
         //////////////////////////////////////////////////////////////////////////ここまでキーマウスによるシーン移動
         ///ここより各位ｓｃｒｉｐｔの時間経過による移動記述
@@ -65,7 +71,8 @@ public class SceneManegers : MonoBehaviour
             if (time > outtime)
             {
                 time = 0;
-                SceneManager.LoadScene(1);
+                //SceneManager.LoadScene(1);
+                FadeManager.Instance.LoadScene("Demo", 2.0f);
             }
         }
 
@@ -75,7 +82,8 @@ public class SceneManegers : MonoBehaviour
             if (time > outtime)
             {
                 time = 0;
-                SceneManager.LoadScene(0);
+                //SceneManager.LoadScene(0);
+                FadeManager.Instance.LoadScene("Title", 2.0f);
             }
         }
         //////////////////////////////////////////ここまで時間経過によるタイトルとデモの移動
