@@ -25,28 +25,29 @@ public class SceneManegers : MonoBehaviour
         if(Input.GetKey(KeyCode.KeypadEnter) || Input.GetMouseButton(0))
         {
             SceneNumber++;
-            if(SceneNumber == 6)
+            if (SceneNumber == 1)
             {
-                if(SceneNumber == 1)
-                {
-                    FadeManager.Instance.LoadScene("Demo", 2.0f);
-                }
-                if (SceneNumber == 2)
-                {
-                    FadeManager.Instance.LoadScene("Main", 2.0f);
-                }
-                if (SceneNumber == 3)
-                {
-                    FadeManager.Instance.LoadScene("Score", 2.0f);
-                }
-                if (SceneNumber == 4)
-                {
-                    FadeManager.Instance.LoadScene("Replay", 2.0f);
-                }
-                if (SceneNumber == 5)
-                {
-                    FadeManager.Instance.LoadScene("Ranking", 2.0f);
-                }
+                FadeManager.Instance.LoadScene("Demo", 2.0f);
+            }
+            if (SceneNumber == 2)
+            {
+                FadeManager.Instance.LoadScene("Main", 2.0f);
+            }
+            if (SceneNumber == 3)
+            {
+                FadeManager.Instance.LoadScene("Score", 2.0f);
+            }
+            if (SceneNumber == 4)
+            {
+                FadeManager.Instance.LoadScene("Replay", 2.0f);
+            }
+            if (SceneNumber == 5)
+            {
+                FadeManager.Instance.LoadScene("Ranking", 2.0f);
+            }
+            if (SceneNumber == 6)
+            {
+               
                 if (TitleSwitch == true)
                 {
                     SceneNumber = 0;
