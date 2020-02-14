@@ -1049,9 +1049,7 @@ GameObject:
   - component: {fileID: 1844700874}
   - component: {fileID: 1844700873}
   - component: {fileID: 1844700872}
-  - component: {fileID: 1844700875}
   - component: {fileID: 1844700876}
-  - component: {fileID: 1844700877}
   m_Layer: 0
   m_Name: EventSystem
   m_TagString: Untagged
@@ -1107,19 +1105,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1844700875
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1844700871}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4317d2b21dcb5014cbb2e284a69b090b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  go: 10
 --- !u!114 &1844700876
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1132,15 +1117,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 204eb5e66b74fa34e9163f6e5a4d326d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1844700877
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1844700871}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 97a7c6d673faab041a20b6aec8688def, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  outtime: 10
