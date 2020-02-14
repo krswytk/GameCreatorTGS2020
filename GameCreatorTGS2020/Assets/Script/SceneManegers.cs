@@ -25,7 +25,7 @@ public class SceneManegers : MonoBehaviour
         if(Input.GetKey(KeyCode.KeypadEnter) || Input.GetMouseButton(0))
         {
             SceneNumber++;
-            if(SceneNumber == 5)
+            if(SceneNumber == 6)
             {
                 if(TitleSwitch == true)
                 {
