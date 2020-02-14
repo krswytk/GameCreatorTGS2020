@@ -16,11 +16,11 @@ public class MoveReplay : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.Return))
         {
-            SceneManager.LoadScene("Replay");
+            FadeManager.Instance.LoadScene("Replay", 2.0f);
         }
         if (Input.GetMouseButton(0))
         {
-            SceneManager.LoadScene("Replay");
+            FadeManager.Instance.LoadScene("Replay", 2.0f);
         }
     }
 }
