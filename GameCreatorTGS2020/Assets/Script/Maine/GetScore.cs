@@ -17,6 +17,9 @@ public class GetScore : MonoBehaviour
     private float total;
     float time;
 
+    public GameObject ver = null;
+    Text Sirial_text;
+
     public float noise = 3;
     // Start is called before the first frame update
     void Start()
@@ -31,12 +34,14 @@ public class GetScore : MonoBehaviour
         {
             yuudati[lp] = 0f;
         }
-
+        Sirial_text = ver.GetComponent<Text>();
     }
 
     // Update is called once per frame
     void Update()
     {
+        Sirial_text.text = sc.ToString();
+
         //Debug.Log(sc);
         for (int lp = 0; lp < yuudati.Length; lp++)
         {
