@@ -96,7 +96,7 @@ public class SceneManegers : MonoBehaviour
         }
         //////////////////////////////////////////////////////////////////////////ここまでキーマウスによるシーン移動
         ///ここより各位ｓｃｒｉｐｔの時間経過による移動記述
-        
+        time += Time.deltaTime;
         if(SceneNumber == 0)
         {
             if (Input.GetKey(KeyCode.Escape))

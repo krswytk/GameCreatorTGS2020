@@ -25,7 +25,7 @@ public class ScoreBreakBord : MonoBehaviour
 
     int anim_save=0;
 
-    int anim_Num=0;
+    public int anim_Num=0;
 
     int test = 0;
 
