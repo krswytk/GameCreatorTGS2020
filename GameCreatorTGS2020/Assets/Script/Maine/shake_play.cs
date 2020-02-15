@@ -8,6 +8,7 @@ public class shake_play : MonoBehaviour
     [SerializeField] private GameObject Score;
     CameraShake shake;
     float Move;
+    float Break;
 
 
     // Start is called before the first frame update
@@ -21,15 +22,10 @@ public class shake_play : MonoBehaviour
     void Update()
     {
         Num = Score.GetComponent<ScoreBreakBord>().anim_Num;
-        if (Move == (Num * -0.5f))
+        if (((Num-2) != Break)&&(Num!=0))
         {
-            //shake.Shake(1.25f, move);
+            shake.Shake(0.25f, 1.1f);
+            Break = Num - 2;
         }
-        else
-        {
-            shake.Shake(1.25f, 0.25f);
-        }
-
-        Move = Num * -0.5f;
     }
 }
