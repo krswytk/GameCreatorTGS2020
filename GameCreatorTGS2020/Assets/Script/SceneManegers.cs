@@ -28,10 +28,9 @@ public class SceneManegers : MonoBehaviour
 
         if (SceneNumber == 0)
         {
-            time = 0;
             time += Time.deltaTime;
         }
-
+        Debug.Log(time);
 
         if (Input.GetKey(KeyCode.KeypadEnter) || Input.GetMouseButton(0))
         {
@@ -45,17 +44,20 @@ public class SceneManegers : MonoBehaviour
             }
             SceneNumber++;
 
-            if (SceneNumber == 1)
+
+            /*if (SceneNumber == 1)
             {
                 SceneNumber += 1;
                 FadeManager.Instance.LoadScene("Maine", 2.0f);
-            }
+
+            }*/
             if (SceneNumber == 2)
             {
                 SceneNumber = 0;
-                FadeManager.Instance.LoadScene("Title", 2.0f);
+                FadeManager.Instance.LoadScene("Maine", 2.0f);
+
             }
-            if (SceneNumber == 3)
+             if (SceneNumber == 3)
             {
                 FadeManager.Instance.LoadScene("Score", 2.0f);
             }
@@ -106,7 +108,7 @@ public class SceneManegers : MonoBehaviour
         }
         //////////////////////////////////////////////////////////////////////////ここまでキーマウスによるシーン移動
         ///ここより各位ｓｃｒｉｐｔの時間経過による移動記述
-        time += Time.deltaTime;
+        
         if (SceneNumber == 0)
         {
             if (Input.GetKey(KeyCode.Escape))
@@ -117,6 +119,7 @@ public class SceneManegers : MonoBehaviour
             {
                 time = 0;
                 //SceneManager.LoadScene(1);
+                SceneNumber = 1;
                 FadeManager.Instance.LoadScene("Demo", 2.0f);
             }
         }
@@ -128,6 +131,7 @@ public class SceneManegers : MonoBehaviour
             {
                 time = 0;
                 //SceneManager.LoadScene(0);
+                SceneNumber = 0;
                 FadeManager.Instance.LoadScene("Title", 2.0f);
             }
         }
