@@ -83,7 +83,7 @@ public class GetScore : MonoBehaviour
                 {
                     Score = total;// * 0.1f;
 
-                    Debug.Log("FullMax:" + Score);
+                    //Debug.Log("FullMax:" + Score);
                 }
             }
 
