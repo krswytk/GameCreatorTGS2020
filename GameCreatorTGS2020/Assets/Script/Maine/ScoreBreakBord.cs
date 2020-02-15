@@ -78,7 +78,7 @@ public class ScoreBreakBord : MonoBehaviour
     void Update()
     {
         //SceneManegaer++;
-        Debug.Log(SceneManegaer);
+        //Debug.Log(SceneManegaer);
         if (((anim_Num +2) > Score)&&(Score!=0))
         {
             SceneManegaer++;
