@@ -38,7 +38,7 @@ public class Camera_Move : MonoBehaviour
         }
         else
         {
-            shake.Shake(Move, 1.1f);
+           // shake.Shake(Move, 1.1f);
         }
 
         Move = Num * -0.5f;

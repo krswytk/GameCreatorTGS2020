@@ -12,12 +12,15 @@ public class My_Score : MonoBehaviour
     AudioSource audioSource;
     private float time;
     int count;
+    int highflag;
+    int highscore = 0;
     void Start()
     {
         ScoreNum = 0;
         n = 0;
         audioSource = GetComponent<AudioSource>();
         count = 1140;
+        highflag = 1;
     }
 
     // Update is called once per frame
@@ -30,10 +33,15 @@ public class My_Score : MonoBehaviour
         n = Mathf.FloorToInt(ScoreNum);
 
         Text uiText = GetComponent<Text>();
-        if (n > 1000)
+        if (n > highscore)
         {
             uiText.text = "ハイスコア！";
-            audioSource.PlayOneShot(sound1);
+            if (highflag == 1)
+            {
+                audioSource.PlayOneShot(sound1);
+                highscore = n;
+                highflag = 0;
+            }
             if (time > 4.0f)
             {
                 {

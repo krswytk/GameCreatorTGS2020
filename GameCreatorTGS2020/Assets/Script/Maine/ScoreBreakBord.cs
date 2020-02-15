@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using UnityEngine.SceneManagement;
 
 public class ScoreBreakBord : MonoBehaviour
 {
@@ -49,6 +50,8 @@ public class ScoreBreakBord : MonoBehaviour
     float B_speed=200;
     float count=0;
 
+    int SceneManegaer=0; 
+
     // Start is called before the first frame update
     void Start()
     {
@@ -74,6 +77,18 @@ public class ScoreBreakBord : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //SceneManegaer++;
+        Debug.Log(SceneManegaer);
+        if (((anim_Num +2) > Score)&&(Score!=0))
+        {
+            SceneManegaer++;
+            if (SceneManegaer > 200)
+            {
+                SceneManager.LoadScene(3);
+            }
+        }
+
+
         //Debug.Log(anim_Num - 1);
         if (anim_Num- 1 >= 0)
         {
@@ -110,7 +125,7 @@ public class ScoreBreakBord : MonoBehaviour
 
             time += Time.deltaTime;
 
-            B_speed = 1-(1.0f*(Score_difference/ 100));
+            B_speed = 1-(1.0f*(Score_difference/ Number));
 
             if(Score < (anim_Num+5)) add_num = 250;//B_speedが高くなるほど速度が落ちる0.33f
 
@@ -125,13 +140,14 @@ public class ScoreBreakBord : MonoBehaviour
         {
             Score_MIN = GetScore.Score;//スコアの初期値取得
             Score_NUM = GetScore.Score;
+            
         }
         else
         {
             Score_NUM = GetScore.Score;
         }
 
-        Score = Score_NUM;
+        Score = Mathf.Floor(Score_NUM/10);
 
         if (Score_MAX < Score)
         {

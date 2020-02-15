@@ -49,7 +49,7 @@ public class Break_Anime : MonoBehaviour
         {
             if (sound == false)
             {
-                shake.Shake(1.25f, 2.1f);
+                //shake.Shake(1.25f, 2.1f);
                 MainSpriteRenderer.sprite = After;
                 sound = true;
                 if (Sound_stop == false) audioSource.Play();
