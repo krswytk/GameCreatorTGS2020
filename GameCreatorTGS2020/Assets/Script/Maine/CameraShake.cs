@@ -4,6 +4,15 @@ using UnityEngine;
 
 public class CameraShake : MonoBehaviour
 {
+    CameraShake shake;
+
+    void Start()
+    {
+        shake = this.GetComponent<CameraShake>();
+    }
+
+
+
     public void Shake(float duration, float magnitude)
     {
         StartCoroutine(DoShake(duration, magnitude));

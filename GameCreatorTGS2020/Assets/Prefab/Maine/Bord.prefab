@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 1286812525376417550}
   - component: {fileID: 3281581143275330281}
   - component: {fileID: 2759313267143165889}
-  - component: {fileID: 4140555627172205650}
   m_Layer: 0
   m_Name: Bord
   m_TagString: Untagged
@@ -199,15 +198,3 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &4140555627172205650
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1286812525376417548}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ffb55af0dd4f8404ba1aa8db07ad61e6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
