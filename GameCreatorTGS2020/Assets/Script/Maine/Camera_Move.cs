@@ -12,6 +12,8 @@ public class Camera_Move : MonoBehaviour
     GameObject Camera;
     float Move;
 
+    CameraShake shake;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -20,6 +22,8 @@ public class Camera_Move : MonoBehaviour
         //Camera = this.GetComponent<Transform>().position.y = Num;
         myTransform = this.transform;
 
+        shake = this.GetComponent<CameraShake>();
+
     }
 
     // Update is called once per frame
@@ -27,6 +31,16 @@ public class Camera_Move : MonoBehaviour
     {
         Num = Score.GetComponent<ScoreBreakBord>().anim_Num;
         // 座標を取得
+
+        if (Move == (Num * -0.5f))
+        {
+            //shake.Shake(1.25f, move);
+        }
+        else
+        {
+            shake.Shake(Move, 1.1f);
+        }
+
         Move = Num * -0.5f;
 
         Vector3 pos = myTransform.position;

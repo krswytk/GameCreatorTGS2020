@@ -20,10 +20,15 @@ public class Break_Anime : MonoBehaviour
     public AudioClip baki4;
     public AudioClip baki5;
 
+
+    CameraShake shake;
+
     // Start is called before the first frame update
     void Start()
     {
         MainSpriteRenderer = this.GetComponent<SpriteRenderer>();
+
+        shake = this.GetComponent<CameraShake>();
 
         audioSource = this.gameObject.GetComponent<AudioSource>();
         //audioSource.time = 3.1f;
@@ -44,6 +49,7 @@ public class Break_Anime : MonoBehaviour
         {
             if (sound == false)
             {
+                shake.Shake(1.25f, 2.1f);
                 MainSpriteRenderer.sprite = After;
                 sound = true;
                 if (Sound_stop == false) audioSource.Play();
