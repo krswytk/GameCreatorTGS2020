@@ -18,7 +18,10 @@ public class GetScore : MonoBehaviour
     float time;
 
     public GameObject ver = null;
+    public GameObject Score_text = null;
     Text Sirial_text;
+    Text Scoretext;
+
 
     public float noise = 3;
     // Start is called before the first frame update
@@ -35,12 +38,14 @@ public class GetScore : MonoBehaviour
             yuudati[lp] = 0f;
         }
         Sirial_text = ver.GetComponent<Text>();
+        Scoretext = Score_text.GetComponent<Text>();
     }
 
     // Update is called once per frame
     void Update()
     {
         Sirial_text.text = sc.ToString();
+        Scoretext.text = Score.ToString();
 
         //Debug.Log(sc);
         for (int lp = 0; lp < yuudati.Length; lp++)
@@ -83,7 +88,7 @@ public class GetScore : MonoBehaviour
                 {
                     Score = total;// * 0.1f;
 
-                    //Debug.Log("FullMax:" + Score);
+                    Debug.Log("FullMax:" + Score);
                 }
             }
 

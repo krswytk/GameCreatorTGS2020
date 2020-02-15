@@ -655,8 +655,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   serialHandler: {fileID: 1842259510}
   ver: {fileID: 2121548906}
+  Score_text: {fileID: 958138500}
   noise: 1
-
 --- !u!1 &958138500
 GameObject:
   m_ObjectHideFlags: 0
@@ -668,7 +668,6 @@ GameObject:
   - component: {fileID: 958138501}
   - component: {fileID: 958138503}
   - component: {fileID: 958138502}
-  - component: {fileID: 958138504}
   m_Layer: 5
   m_Name: Text
   m_TagString: Untagged
@@ -737,19 +736,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 958138500}
   m_CullTransparentMesh: 0
---- !u!114 &958138504
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 958138500}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3d3e4ec6d0920c244853d6ff869f1666, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Score: {fileID: 1833714474}
 --- !u!1 &1722588890
 GameObject:
   m_ObjectHideFlags: 0

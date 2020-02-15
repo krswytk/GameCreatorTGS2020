@@ -35,7 +35,6 @@ public class My_Score : MonoBehaviour
         Text uiText = GetComponent<Text>();
         if (n > highscore)
         {
-            uiText.text = "ハイスコア！";
             if (highflag == 1)
             {
                 audioSource.PlayOneShot(sound1);
