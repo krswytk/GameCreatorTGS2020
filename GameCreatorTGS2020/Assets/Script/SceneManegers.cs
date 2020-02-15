@@ -44,14 +44,18 @@ public class SceneManegers : MonoBehaviour
             }
             SceneNumber++;
 
-            
+
+            /*if (SceneNumber == 1)
+            {
+                SceneNumber += 1;
+                FadeManager.Instance.LoadScene("Maine", 2.0f);
+            }*/
             if (SceneNumber == 2)
             {
-                time = 0;
+                SceneNumber = 0;
                 FadeManager.Instance.LoadScene("Maine", 2.0f);
-
             }
-            if (SceneNumber == 3)
+             if (SceneNumber == 3)
             {
                 FadeManager.Instance.LoadScene("Score", 2.0f);
             }
