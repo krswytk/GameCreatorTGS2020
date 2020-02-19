@@ -637,7 +637,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 690236811}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 204eb5e66b74fa34e9163f6e5a4d326d, type: 3}
+  m_Script: {fileID: 11500000, guid: 72e1a080badc59e40a84a79732bfcbbe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   outtime: 10
@@ -656,7 +656,6 @@ MonoBehaviour:
   serialHandler: {fileID: 1842259510}
   ver: {fileID: 2121548906}
   noise: 1
-
 --- !u!1 &958138500
 GameObject:
   m_ObjectHideFlags: 0
