@@ -13,34 +13,45 @@ public class WebCameraController : MonoBehaviour
     public WebCamTexture webcamTexture;
     public Color32[] color32;
 
+    public static bool off = false;
+
 
     void Start()
     {
         WebCamDevice[] devices = WebCamTexture.devices;
         webcamTexture = new WebCamTexture(devices[0].name, Width, Height, FPS);
         GetComponent<Renderer>().material.mainTexture = webcamTexture;
-        webcamTexture.Play();
     }
 
 
     void Update()
     {
-        i++;
-        color32 = webcamTexture.GetPixels32();
-        Texture2D texture = new Texture2D(webcamTexture.width, webcamTexture.height);
-        GetComponent<Renderer>().material.mainTexture = texture;
-        texture.SetPixels32(color32);
-        texture.Apply();
-        var bytes = texture.EncodeToPNG();
-        File.WriteAllBytes(Application.dataPath + "/output_images/camera" + i+".png", bytes);
-        if (i > 149)
-            i = 0;
-
+        Debug.Log(off);
+        if (off == false)
+        {
+            webcamTexture.Play();
+            i++;
+            color32 = webcamTexture.GetPixels32();
+            Texture2D texture = new Texture2D(webcamTexture.width, webcamTexture.height);
+            GetComponent<Renderer>().material.mainTexture = texture;
+            texture.SetPixels32(color32);
+            texture.Apply();
+            var bytes = texture.EncodeToPNG();
+            File.WriteAllBytes(Application.dataPath + "/output_images/camera" + i + ".png", bytes);
+            if (i > 149)
+                i = 0;
+        }
+        else
+        {
+            webcamTexture = null;
+            webcamTexture.Pause();
+            this.gameObject.SetActive(false);
+        }
 
         if (Input.GetKey(KeyCode.B))
         {
             webcamTexture.Pause();
-            Debug.Log("fack");
+            Debug.Log("Stop");
         }
     }
 }

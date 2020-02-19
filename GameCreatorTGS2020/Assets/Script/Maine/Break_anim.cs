@@ -22,7 +22,6 @@ public class Break_anim : MonoBehaviour
 
 
     CameraShake shake;
-
     
 
     // Start is called before the first frame update
@@ -47,7 +46,7 @@ public class Break_anim : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
