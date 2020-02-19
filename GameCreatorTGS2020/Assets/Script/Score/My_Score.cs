@@ -44,23 +44,7 @@ public class My_Score : MonoBehaviour
             }
             if (time > 4.0f)
             {
-                {
-                    uiText.text = "きみのスコアは:" + n;
-                    if (count >= 1140)
-                    {
-                        audioSource.PlayOneShot(sound2);
-                        count = 0;
 
-                    }
-                    else
-                    {
-                        count++;
-                    }
-                }
-            }
-        }
-            else
-            {
                 uiText.text = "きみのスコアは:" + n;
                 if (count >= 1140)
                 {
@@ -72,6 +56,22 @@ public class My_Score : MonoBehaviour
                 {
                     count++;
                 }
+
+            }
+        }
+        else
+        {
+            uiText.text = "きみのスコアは:" + n;
+            if (count >= 1140)
+            {
+                audioSource.PlayOneShot(sound2);
+                count = 0;
+
+            }
+            else
+            {
+                count++;
             }
         }
     }
+}
