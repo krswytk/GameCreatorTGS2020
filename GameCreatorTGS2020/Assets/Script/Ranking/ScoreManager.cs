@@ -61,7 +61,7 @@ public class ScoreManager : MonoBehaviour
     // 更新
     void Update()
     {
-        Debug.Log(START_UP);
+
         for (int i = 0; i < START_UP; ++i)
         {
             for (int j = i + 1; j < START_UP; ++j)

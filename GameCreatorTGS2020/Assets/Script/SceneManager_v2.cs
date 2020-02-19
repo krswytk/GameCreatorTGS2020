@@ -8,12 +8,12 @@ public class SceneManager_v2 : MonoBehaviour
     static private bool TitleSwitch = false;
     static private int SceneNumber;
     static private float time;
-    public float outtime = 10;
+    public float outtime;
     private static float scanTime;
     // Start is called before the first frame update
     void Start()
     {
-        SceneNumber = SceneManager.GetActiveScene().buildIndex;
+      
     }
 
     // Update is called once per frame
@@ -25,13 +25,10 @@ public class SceneManager_v2 : MonoBehaviour
         ///左シフトでタイトルもしくはメインへの強制移動　移動先は上記記述を参照
         ///
         scanTime += Time.deltaTime;
+    
+        time += Time.deltaTime;
 
-        if (SceneNumber == 0 || SceneNumber == 1 || SceneNumber == 2)
-        {
-            time += Time.deltaTime;
-        }
-        Debug.Log(time);
-
+        
         if (Input.GetKey(KeyCode.KeypadEnter) || Input.GetMouseButton(0))
         {
             if (scanTime < 3.0f)
@@ -80,7 +77,7 @@ public class SceneManager_v2 : MonoBehaviour
                 }
                 else
                 {
-                    SceneNumber = 2;
+                    SceneNumber = 3;
                     FadeManager.Instance.LoadScene("Maine", 2.0f);
                 }
                 //SceneManager.LoadScene(SceneNumber);
@@ -139,6 +136,7 @@ public class SceneManager_v2 : MonoBehaviour
 
         if (SceneNumber == 2)
         {
+        
             if (time > outtime)
             {
                 time = 0;
