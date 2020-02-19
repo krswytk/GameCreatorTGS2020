@@ -13,7 +13,7 @@ public class SceneManegers : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        SceneNumber = SceneManager.GetActiveScene().buildIndex;
+  
     }
 
     // Update is called once per frame
@@ -24,9 +24,13 @@ public class SceneManegers : MonoBehaviour
         ///スペースでランキング後の移動シーンの変更　デフォルトはタイトル
         ///左シフトでタイトルもしくはメインへの強制移動　移動先は上記記述を参照
         ///
-        scanTime += Time.deltaTime;
+        if (Input.GetKey(KeyCode.D))
+        {
+            FadeManager.Instance.LoadScene("Debag", 2.0f);
+        }
+            scanTime += Time.deltaTime;
 
-        if (SceneNumber == 0)
+        if (SceneManager.GetActiveScene().name == "Title" || SceneManager.GetActiveScene().name == "Demo" || SceneManager.GetActiveScene().name == "Ranking")
         {
             time += Time.deltaTime;
         }
@@ -42,44 +46,23 @@ public class SceneManegers : MonoBehaviour
             {
                 scanTime = 0;
             }
-            SceneNumber++;
-
-
-            /*if (SceneNumber == 1)
-            {
-                SceneNumber += 1;
-                FadeManager.Instance.LoadScene("Maine", 2.0f);
-
-            }*/
-            if (SceneNumber == 2)
-            {
-                SceneNumber = 0;
-                FadeManager.Instance.LoadScene("Title", 2.0f);
-
-            }
-             if (SceneNumber == 3)
+    
+            if (SceneManager.GetActiveScene().name == "Maine")
             {
                 FadeManager.Instance.LoadScene("Score", 2.0f);
             }
-            if (SceneNumber == 4)
+            if (SceneManager.GetActiveScene().name == "Score")
             {
                 FadeManager.Instance.LoadScene("Replay", 2.0f);
             }
-            if (SceneNumber == 5)
+            if (SceneManager.GetActiveScene().name == "Replay")
             {
-                FadeManager.Instance.LoadScene("Ranking", 2.0f);
-            }
-            if (SceneNumber == 6)
-            {
-
                 if (TitleSwitch == true)
                 {
-                    SceneNumber = 0;
                     FadeManager.Instance.LoadScene("Title", 2.0f);
                 }
                 else
                 {
-                    SceneNumber = 2;
                     FadeManager.Instance.LoadScene("Maine", 2.0f);
                 }
                 //SceneManager.LoadScene(SceneNumber);
@@ -95,12 +78,10 @@ public class SceneManegers : MonoBehaviour
 
             if (TitleSwitch == true)
             {
-                SceneNumber = 0;
                 FadeManager.Instance.LoadScene("Title", 2.0f);
             }
             else
             {
-                SceneNumber = 2;
                 FadeManager.Instance.LoadScene("Maine", 2.0f);
             }
 
@@ -109,7 +90,7 @@ public class SceneManegers : MonoBehaviour
         //////////////////////////////////////////////////////////////////////////ここまでキーマウスによるシーン移動
         ///ここより各位ｓｃｒｉｐｔの時間経過による移動記述
         
-        if (SceneNumber == 0)
+        if (SceneManager.GetActiveScene().name == "Title")
         {
             if (Input.GetKey(KeyCode.Escape))
             {
@@ -119,19 +100,29 @@ public class SceneManegers : MonoBehaviour
             {
                 time = 0;
                 //SceneManager.LoadScene(1);
-                SceneNumber = 1;
+      
                 FadeManager.Instance.LoadScene("Demo", 2.0f);
             }
         }
 
 
-        if (SceneNumber == 1)
+        if (SceneManager.GetActiveScene().name == "Demo")
         {
             if (time > outtime)
             {
                 time = 0;
                 //SceneManager.LoadScene(0);
-                SceneNumber = 0;
+              
+                FadeManager.Instance.LoadScene("Ranking", 2.0f);
+            }
+        }
+        if (SceneManager.GetActiveScene().name == "Ranking")
+        {
+            if (time > outtime)
+            {
+                time = 0;
+                //SceneManager.LoadScene(0);
+
                 FadeManager.Instance.LoadScene("Title", 2.0f);
             }
         }
