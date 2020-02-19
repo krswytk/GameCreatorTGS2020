@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class My_Score : MonoBehaviour
 {
-    float ScoreNum;
+    float ScoreNum=0;
     int n;
     public AudioClip sound1;
     public AudioClip sound2;
@@ -31,7 +31,7 @@ public class My_Score : MonoBehaviour
         //ScoreNum = ScoreNum + 1;
 
         n = Mathf.FloorToInt(ScoreNum);
-
+        Debug.Log(n);
         Text uiText = GetComponent<Text>();
         uiText.text = "きみのスコアは:" + n;
         if (highflag == 1)
