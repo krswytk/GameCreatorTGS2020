@@ -33,10 +33,8 @@ public class My_Score : MonoBehaviour
         n = Mathf.FloorToInt(ScoreNum);
 
         Text uiText = GetComponent<Text>();
-        if (n > highscore)
-        {
-            uiText.text = "ハイスコア！";
-            if (highflag == 1)
+        uiText.text = "きみのスコアは:" + n;
+        if (highflag == 1)
             {
                 audioSource.PlayOneShot(sound1);
                 highscore = n;
@@ -44,8 +42,6 @@ public class My_Score : MonoBehaviour
             }
             if (time > 4.0f)
             {
-
-                uiText.text = "きみのスコアは:" + n;
                 if (count >= 1140)
                 {
                     audioSource.PlayOneShot(sound2);
@@ -58,20 +54,6 @@ public class My_Score : MonoBehaviour
                 }
 
             }
-        }
-        else
-        {
-            uiText.text = "きみのスコアは:" + n;
-            if (count >= 1140)
-            {
-                audioSource.PlayOneShot(sound2);
-                count = 0;
-
-            }
-            else
-            {
-                count++;
-            }
-        }
+        
     }
 }
