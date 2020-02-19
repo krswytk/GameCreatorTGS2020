@@ -27,6 +27,12 @@ EditorBuildSettings:
     path: Assets/Scenes/Ranking.unity
     guid: 86f9deeb669f20042a7494bd9ad6596e
   - enabled: 1
+<<<<<<< HEAD
+    path: Assets/Scenes/ManagerScene.unity
+    guid: 2c14360e1145a5c4388c0482ce10d1ae
+  - enabled: 1
+=======
+>>>>>>> 06f1f1ac3df458fdbeec6d4a35aff824bc31ce28
     path: Assets/Scenes/Debag.unity
     guid: ad8c4db984f872248b11db496645022a
   m_configObjects: {}
