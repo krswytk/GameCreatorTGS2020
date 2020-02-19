@@ -13,7 +13,7 @@ public class GetScore : MonoBehaviour
 
     private float[] yuudati = new float[21];
     private float[] copy = new float[21];
-    private float sc;
+    public static float sc;
     private float total;
     float time;
 
