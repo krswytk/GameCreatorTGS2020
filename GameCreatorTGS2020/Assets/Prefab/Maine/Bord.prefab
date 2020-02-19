@@ -96,6 +96,7 @@ MonoBehaviour:
   Before: {fileID: 21300000, guid: a1cb4a430d9ef22438e80483234762aa, type: 3}
   After: {fileID: 21300000, guid: 20114874db2c5d646babe4479e78c0f4, type: 3}
   Break_borad: 0
+  Sound_stop: 0
   baki1: {fileID: 8300000, guid: 5417bd2fefbbae640849df786bb9353b, type: 3}
   baki2: {fileID: 8300000, guid: ce6a4a89d1aa93446add0df60b0c2066, type: 3}
   baki3: {fileID: 8300000, guid: b193f7b860411a64f8b63c40db47ff11, type: 3}

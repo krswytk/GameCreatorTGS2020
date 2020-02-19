@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class SceneManegers : MonoBehaviour
+public class SceneManager_v2 : MonoBehaviour
 {
     static private bool TitleSwitch = false;
     static private int SceneNumber;
@@ -57,7 +57,7 @@ public class SceneManegers : MonoBehaviour
                 FadeManager.Instance.LoadScene("Maine", 2.0f);
 
             }
-             if (SceneNumber == 3)
+            if (SceneNumber == 3)
             {
                 FadeManager.Instance.LoadScene("Score", 2.0f);
             }
@@ -108,7 +108,7 @@ public class SceneManegers : MonoBehaviour
         }
         //////////////////////////////////////////////////////////////////////////ここまでキーマウスによるシーン移動
         ///ここより各位ｓｃｒｉｐｔの時間経過による移動記述
-        
+
         if (SceneNumber == 0)
         {
             if (Input.GetKey(KeyCode.Escape))
