@@ -25,21 +25,23 @@ public class WebCameraController : MonoBehaviour
 
     void Update()
     {
-
+        i++;
         color32 = webcamTexture.GetPixels32();
-
-
         Texture2D texture = new Texture2D(webcamTexture.width, webcamTexture.height);
         GetComponent<Renderer>().material.mainTexture = texture;
-
-
         texture.SetPixels32(color32);
         texture.Apply();
         var bytes = texture.EncodeToPNG();
         File.WriteAllBytes(Application.dataPath + "/output_images/camera" + i+".png", bytes);
-        i++;
-        if (i == 150)
+        if (i > 149)
             i = 0;
+
+
+        if (Input.GetKey(KeyCode.B))
+        {
+            webcamTexture.Pause();
+            Debug.Log("fack");
+        }
     }
 }
 
