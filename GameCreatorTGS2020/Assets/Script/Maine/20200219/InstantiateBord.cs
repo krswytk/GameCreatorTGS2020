@@ -14,7 +14,7 @@ public class InstantiateBord : MonoBehaviour
 
         for (int lp = 0; lp < Number; lp++)
         {
-           Bords[lp] = Instantiate(Bord, new Vector3(-0.63f, -0.5f * lp, 0.1f*lp), Quaternion.identity);
+           Bords[lp] = Instantiate(Bord, new Vector3(-0.63f, -10.5f * lp, 0.1f*lp), Quaternion.identity);
             Bords[lp].name = "Bord" + lp;
             Bords[lp].transform.parent = this.transform;
         }

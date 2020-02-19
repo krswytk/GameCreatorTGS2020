@@ -30,7 +30,7 @@ public class SceneManager_v2 : MonoBehaviour
         {
             time += Time.deltaTime;
         }
-        Debug.Log(time);
+        //Debug.Log(time);
 
         if (Input.GetKey(KeyCode.KeypadEnter) || Input.GetMouseButton(0))
         {

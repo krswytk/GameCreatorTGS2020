@@ -12,6 +12,9 @@ GameObject:
   - component: {fileID: 1286812525376417550}
   - component: {fileID: 3281581143275330281}
   - component: {fileID: 2759313267143165889}
+  - component: {fileID: 2670012718044555803}
+  - component: {fileID: 4144107106154588531}
+  - component: {fileID: 7044402433916382172}
   m_Layer: 0
   m_Name: Bord
   m_TagString: Untagged
@@ -88,7 +91,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1286812525376417548}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1c4b5ac7e8e502943b0e9953af98f65c, type: 3}
   m_Name: 
@@ -198,3 +201,71 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!50 &2670012718044555803
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1286812525376417548}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 7
+--- !u!61 &4144107106154588531
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1286812525376417548}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.4553113, y: 0.63744354}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 19.2, y: 10.8}
+    newSize: {x: 19.2, y: 10.8}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 18.28938, y: 3.3329058}
+  m_EdgeRadius: 0
+--- !u!114 &7044402433916382172
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1286812525376417548}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 347bcbdbd5a41824e9320dcb33a7d496, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Before: {fileID: 21300000, guid: a1cb4a430d9ef22438e80483234762aa, type: 3}
+  After: {fileID: 21300000, guid: 20114874db2c5d646babe4479e78c0f4, type: 3}
+  Break_borad: 0
+  Sound_stop: 0
+  baki1: {fileID: 8300000, guid: 5417bd2fefbbae640849df786bb9353b, type: 3}
+  baki2: {fileID: 8300000, guid: ce6a4a89d1aa93446add0df60b0c2066, type: 3}
+  baki3: {fileID: 8300000, guid: b193f7b860411a64f8b63c40db47ff11, type: 3}
+  baki4: {fileID: 8300000, guid: 20d2a3b6b6f1c064587ddfa6eda3e66d, type: 3}
+  baki5: {fileID: 8300000, guid: 4b69081000c74f84e9d5fbd7d410ebbf, type: 3}
