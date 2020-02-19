@@ -15,6 +15,7 @@ public class WebCameraController : MonoBehaviour
 
     public static bool off = false;
 
+    string exsistFileName;
 
     void Start()
     {
@@ -43,8 +44,18 @@ public class WebCameraController : MonoBehaviour
         }
         else
         {
+            for (int lp = 1; lp < 151; lp++)
+            {
+                exsistFileName = "camera" + lp + ".png";
+                var captureDirectory = Application.dataPath;
+                var captureFileName = exsistFileName;
+                var capturePath = Path.Combine(captureDirectory, captureFileName);
+                if (File.Exists(capturePath)) File.Delete(capturePath);
+                Debug.Log(exsistFileName);
+
+            }
             webcamTexture = null;
-            webcamTexture.Pause();
+            //webcamTexture.Pause();
             this.gameObject.SetActive(false);
         }
 

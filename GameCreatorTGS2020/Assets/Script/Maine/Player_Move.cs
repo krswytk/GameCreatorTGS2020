@@ -50,7 +50,7 @@ public class Player_Move : MonoBehaviour
         }
 
         Num = Mathf.Floor(((Score - 1000) / 100)*3);
-        Debug.Log(time);
+        //Debug.Log(time);
 
         if (time > 100)
         {
