@@ -73,7 +73,7 @@ public class ScoreManager : MonoBehaviour
                 }
             highScoreGUIs[i].text = i + 1 + "位:" + highScore[i];
         }
-        scoreGUI.text = "貴方のスコア:" + score;
+    
     }
 
     public void Reset()

@@ -20,7 +20,7 @@ public class TextMove : MonoBehaviour
     void Update()
     {
 
-        Invoke("Move", 15.0f);
+        Invoke("Move", 3.0f);
         
     
     }

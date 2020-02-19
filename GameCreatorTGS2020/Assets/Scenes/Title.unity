@@ -1182,4 +1182,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72e1a080badc59e40a84a79732bfcbbe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  outtime: 10
+  outtime: 20
