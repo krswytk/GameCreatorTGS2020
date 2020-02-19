@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class SceneManager_v2 : MonoBehaviour
 {
     static private bool TitleSwitch = false;
-    static private int SceneNumber;
+    static public int SceneNumber;
     static private float time;
     public float outtime;
     private static float scanTime;
@@ -25,11 +25,8 @@ public class SceneManager_v2 : MonoBehaviour
         ///左シフトでタイトルもしくはメインへの強制移動　移動先は上記記述を参照
         ///
         scanTime += Time.deltaTime;
-    
-        time += Time.deltaTime;
 
-
-        if (SceneNumber == 0)
+        if (SceneNumber == 0 || SceneNumber == 1 || SceneNumber == 2)
         {
             time += Time.deltaTime;
         }
