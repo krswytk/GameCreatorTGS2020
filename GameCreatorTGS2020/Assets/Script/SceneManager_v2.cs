@@ -26,7 +26,7 @@ public class SceneManager_v2 : MonoBehaviour
         ///
         scanTime += Time.deltaTime;
 
-        if (SceneNumber == 0 || SceneNumber == 1 || SceneNumber == 2)
+        if (SceneManager.GetActiveScene().name == "Title" || SceneManager.GetActiveScene().name == "Demo" || SceneManager.GetActiveScene().name == "Ranking")
         {
             time += Time.deltaTime;
         }
@@ -45,42 +45,38 @@ public class SceneManager_v2 : MonoBehaviour
             SceneNumber++;
 
 
-            if (SceneNumber == 1)
+            if (SceneManager.GetActiveScene().name == "Demo")
             {
-                SceneNumber += 2;
+              
                 FadeManager.Instance.LoadScene("Maine", 2.0f);
 
             }
-            if (SceneNumber == 2)
+            if (SceneManager.GetActiveScene().name == "Ranking")
             {
-                SceneNumber += 1;
+                
                 FadeManager.Instance.LoadScene("Maine", 2.0f);
 
             }
-            if (SceneNumber == 3)
-            {
-                FadeManager.Instance.LoadScene("Maine", 2.0f);
-
-            }
-            if (SceneNumber == 4)
+            if (SceneManager.GetActiveScene().name == "Maine")
             {
                 FadeManager.Instance.LoadScene("Score", 2.0f);
+
             }
-            if (SceneNumber == 5)
+            if (SceneManager.GetActiveScene().name == "Score")
             {
                 FadeManager.Instance.LoadScene("Replay", 2.0f);
             }
-            if (SceneNumber == 6)
+            if (SceneManager.GetActiveScene().name == "Replay")
             {
 
                 if (TitleSwitch == true)
                 {
-                    SceneNumber = 0;
+                  
                     FadeManager.Instance.LoadScene("Title", 2.0f);
                 }
                 else
                 {
-                    SceneNumber = 3;
+                  
                     FadeManager.Instance.LoadScene("Maine", 2.0f);
                 }
                 //SceneManager.LoadScene(SceneNumber);
@@ -96,12 +92,12 @@ public class SceneManager_v2 : MonoBehaviour
 
             if (TitleSwitch == true)
             {
-                SceneNumber = 0;
+        
                 FadeManager.Instance.LoadScene("Title", 2.0f);
             }
             else
             {
-                SceneNumber = 2;
+          
                 FadeManager.Instance.LoadScene("Maine", 2.0f);
             }
 
@@ -110,7 +106,7 @@ public class SceneManager_v2 : MonoBehaviour
         //////////////////////////////////////////////////////////////////////////ここまでキーマウスによるシーン移動
         ///ここより各位ｓｃｒｉｐｔの時間経過による移動記述
 
-        if (SceneNumber == 0)
+        if (SceneManager.GetActiveScene().name == "Title")
         {
             if (Input.GetKey(KeyCode.Escape))
             {
@@ -120,31 +116,31 @@ public class SceneManager_v2 : MonoBehaviour
             {
                 time = 0;
                 //SceneManager.LoadScene(1);
-                SceneNumber = 1;
+              
                 FadeManager.Instance.LoadScene("Demo", 2.0f);
             }
         }
 
 
-        if (SceneNumber == 1)
+        if (SceneManager.GetActiveScene().name == "Demo")
         {
             if (time > outtime)
             {
                 time = 0;
                 //SceneManager.LoadScene(0);
-                SceneNumber = 2;
+                
                 FadeManager.Instance.LoadScene("Ranking", 2.0f);
             }
         }
 
-        if (SceneNumber == 2)
+        if (SceneManager.GetActiveScene().name == "Ranking")
         {
         
             if (time > outtime)
             {
                 time = 0;
                 //SceneManager.LoadScene(0);
-                SceneNumber = 0;
+            
                 FadeManager.Instance.LoadScene("Title", 2.0f);
             }
         }
