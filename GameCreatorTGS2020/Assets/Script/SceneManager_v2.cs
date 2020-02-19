@@ -25,7 +25,10 @@ public class SceneManager_v2 : MonoBehaviour
         ///左シフトでタイトルもしくはメインへの強制移動　移動先は上記記述を参照
         ///
         scanTime += Time.deltaTime;
-
+        if (Input.GetKey(KeyCode.D))
+        {
+            FadeManager.Instance.LoadScene("Debag", 2.0f);
+        }
         if (SceneManager.GetActiveScene().name == "Title" || SceneManager.GetActiveScene().name == "Demo" || SceneManager.GetActiveScene().name == "Ranking")
         {
             time += Time.deltaTime;
