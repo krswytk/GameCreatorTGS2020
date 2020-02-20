@@ -5,10 +5,10 @@ using UnityEngine;
 public class Player_Move : MonoBehaviour
 {
 
-    float Speed=0;
+    public static  float Speed=0;
     GameObject Camera;
     Transform myTransform;
-    Vector3 pos;
+    public static  Vector3 pos;
 
     int hit = 0;
 
@@ -26,6 +26,12 @@ public class Player_Move : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Input.GetKey(KeyCode.A))
+        {
+            Speed = Speed - 0.1f;
+            pos.y = Speed;
+            myTransform.position = pos;  // 座標を設定
+        }
 
         if (Score == 0)
         {
@@ -42,7 +48,7 @@ public class Player_Move : MonoBehaviour
         }
 
         Num = Mathf.Floor((Score - 1000) / 100);
-        Debug.Log(Num);
+        //Debug.Log(Num);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
