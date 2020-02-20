@@ -5,10 +5,10 @@ using UnityEngine;
 public class Player_Move : MonoBehaviour
 {
 
-    public static  float Speed;
+    public static float Speed;
     GameObject Camera;
     Transform myTransform;
-    public static  Vector3 pos;
+    public static Vector3 pos;
     public static float Player_pos;
 
     public static bool break_stop;
@@ -63,9 +63,9 @@ public class Player_Move : MonoBehaviour
         if (Score == 0)
         {
             Score = GetScore.Score;
-            if(Mathf.Floor(((Score - 1000) / 100)) < 6)
+            if (Mathf.Floor(((Score - 1000) / 100) * 3) < 6)
             {
-                Num = Mathf.Floor(((Score - 1000) / 100));
+                Num = Mathf.Floor(((Score - 1000) / 100) * 3);
             }
             else
             {
@@ -92,7 +92,7 @@ public class Player_Move : MonoBehaviour
             }
         }
         //Debug.Log(myTransform.position.y);
-        //Debug.Log(Num);
+        Debug.Log(Num);
         //Debug.Log("hit:"+hit);
         //Debug.Log(break_stop);
         Player_pos = myTransform.position.y;
@@ -110,6 +110,11 @@ public class Player_Move : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        if (collision.gameObject.tag == "bill_rb")
+        {
+            this.gameObject.GetComponent<CircleCollider2D>().isTrigger = false;
+        }
+
         if (collision.gameObject.tag == "bord")
         {
             if (hit == Num)
@@ -121,7 +126,7 @@ public class Player_Move : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D col2)
     {
-        if((hit-1 < Num)&&(istrigger==false))
+        if ((hit - 1 < Num) && (istrigger == false))
         {
             if (col2.gameObject.tag == "Break")
             {
@@ -134,7 +139,7 @@ public class Player_Move : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D col)
     {
-        if ((col.gameObject.tag == "Break")||(hit>6))
+        if ((col.gameObject.tag == "Break") || (hit > 6))
         {
             this.gameObject.GetComponent<CircleCollider2D>().isTrigger = false;
         }

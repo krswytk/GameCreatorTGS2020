@@ -10,6 +10,7 @@ TagManager:
   - BordManeger
   - Break
   - bord
+  - bill_rb
   layers:
   - Default
   - TransparentFX
