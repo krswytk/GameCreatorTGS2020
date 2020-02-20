@@ -11,6 +11,8 @@ public class Player_Move : MonoBehaviour
     public static  Vector3 pos;
     public static float Player_pos;
 
+    public static bool break_stop = false;
+
     int hit = 0;
 
     float Score=0;
@@ -43,7 +45,7 @@ public class Player_Move : MonoBehaviour
         if (Score == 0)
         {
             Score = GetScore.Score;
-            Num = Mathf.Floor((Score - 1000) / 100);
+            Num = Mathf.Floor(((Score - 1000) / 100)*3);
         }
         else
         {
@@ -56,15 +58,16 @@ public class Player_Move : MonoBehaviour
             }
             if (hit == Num)
             {
-                this.gameObject.GetComponent<Rigidbody2D>().gravityScale = 0;
+                break_stop = true;
+                //this.gameObject.GetComponent<Rigidbody2D>().gravityScale = 0;
                 Rigidbody2D rb = this.GetComponent<Rigidbody2D>();  // rigidbodyを取得
-                Vector3 force = new Vector3(0.0f, -10.0f, 1.0f);    // 力を設定
-                rb.AddForce(force);
+                Vector2 force = new Vector2(0.0f, 0.0f);    // 力を設定
+                //rb.velocity = force;
                 //Debug.Log("fack");
             }
         }
         //Debug.Log(myTransform.position.y);
-        //Debug.Log(Num);
+        Debug.Log(GetScore.Score);
         Player_pos = myTransform.position.y;
     }
 
