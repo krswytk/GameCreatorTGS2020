@@ -9,9 +9,9 @@ public class Break_anim : MonoBehaviour
 
     SpriteRenderer MainSpriteRenderer;
 
-    public bool Break_borad = false;
-    public bool Sound_stop = false;
-    bool sound = false;
+    public bool Break_borad;
+    public bool Sound_stop;
+    bool sound_on;
 
     AudioSource audioSource;
     public AudioClip baki1;
@@ -28,6 +28,14 @@ public class Break_anim : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Break_borad = false;
+        Sound_stop = false;
+        sound_on = false;
+
+
+
+
+
         MainSpriteRenderer = this.GetComponent<SpriteRenderer>();
 
         shake = this.GetComponent<CameraShake>();
@@ -52,7 +60,7 @@ public class Break_anim : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (sound == false)
+        if (sound_on == false)
         {
             if (collision.gameObject.tag == "Player")
             {
@@ -60,7 +68,7 @@ public class Break_anim : MonoBehaviour
                 {
                     //shake.Shake(1.25f, 2.1f);
                     MainSpriteRenderer.sprite = After;
-                    sound = true;
+                    sound_on = true;
                     if (Sound_stop == false) audioSource.Play();
                     Destroy(this.gameObject.GetComponent<PolygonCollider2D>());
                     //Destroy(this.gameObject.GetComponent<BoxCollider2D>());

@@ -5,28 +5,40 @@ using UnityEngine;
 public class Player_Move : MonoBehaviour
 {
 
-    public static  float Speed=0;
+    public static  float Speed;
     GameObject Camera;
     Transform myTransform;
     public static  Vector3 pos;
     public static float Player_pos;
 
-    public static bool break_stop = false;
+    public static bool break_stop;
 
-    public static int hit = 0;
+    public static int hit;
 
-    float Score=0;
-    float Num = 0;
+    float Score;
+    float Num;
 
-    bool istrigger=false;
+    bool istrigger;
 
-    int time = 0;
+    int time;
 
-    public static bool feed_out = false;
+    public static bool feed_out;
 
     // Start is called before the first frame update
     void Start()
     {
+        Speed = 0;
+        break_stop = false;
+        hit = 0;
+        Score = 0;
+        Num = 0;
+        time = 0;
+        feed_out = false;
+        istrigger = false;
+
+
+
+
         myTransform = this.transform;
         pos = myTransform.position;
         //Speed = pos.y;
