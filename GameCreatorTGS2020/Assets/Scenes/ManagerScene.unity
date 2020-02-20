@@ -152,7 +152,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   serialHandler: {fileID: 718883023}
-  noise: 1
+  noise: 2
 --- !u!114 &718883023
 MonoBehaviour:
   m_ObjectHideFlags: 0
