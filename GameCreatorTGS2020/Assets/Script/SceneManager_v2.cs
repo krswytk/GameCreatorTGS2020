@@ -11,6 +11,8 @@ public class SceneManager_v2 : MonoBehaviour
     public float outtime = 10.0f;
     private  float scanTime;
     private bool DebagMode = false;
+
+    //private bool PlayerMove;
     // Start is called before the first frame update
     void Start()
     {
@@ -28,6 +30,8 @@ public class SceneManager_v2 : MonoBehaviour
         ///左シフトでタイトルもしくはメインへの強制移動　移動先は上記記述を参照
         ///
         scanTime += Time.deltaTime;
+        //PlayerMove = Player_Move.feed_out;
+
         if (Input.GetKey(KeyCode.D))
         {
             if (scanTime > 1.0f)
@@ -55,12 +59,18 @@ public class SceneManager_v2 : MonoBehaviour
         }
         //Debug.Log(time);
 
-        if (Input.GetKey(KeyCode.KeypadEnter) || Input.GetMouseButton(0))
+        if (Input.GetKeyDown(KeyCode.Return))
         {
             if (scanTime > 1.0f)
             {
                 //SceneNumber++;
-                
+
+                if (SceneManager.GetActiveScene().name == "Title")
+                {
+
+                    FadeManager.Instance.LoadScene("Maine", 2.0f);
+
+                }
                 if (SceneManager.GetActiveScene().name == "Demo")
                 {
 
@@ -75,12 +85,15 @@ public class SceneManager_v2 : MonoBehaviour
                 }
                 if (SceneManager.GetActiveScene().name == "Maine")
                 {
+
                     FadeManager.Instance.LoadScene("Score", 2.0f);
 
                 }
                 if (SceneManager.GetActiveScene().name == "Score")
                 {
+
                     FadeManager.Instance.LoadScene("Replay", 2.0f);
+
                 }
                 if (SceneManager.GetActiveScene().name == "Replay")
                 {
@@ -141,7 +154,6 @@ public class SceneManager_v2 : MonoBehaviour
             }
         }
 
-
         if (SceneManager.GetActiveScene().name == "Demo")
         {
             if (time > outtime)
@@ -164,6 +176,14 @@ public class SceneManager_v2 : MonoBehaviour
                 FadeManager.Instance.LoadScene("Title", 2.0f);
             }
         }
+
+
+
+        if (Player_Move.feed_out == true)
+        {
+            FadeManager.Instance.LoadScene("Score", 2.0f);
+        }
+
         //////////////////////////////////////////ここまで時間経過によるタイトルとデモの移動
     }
 
