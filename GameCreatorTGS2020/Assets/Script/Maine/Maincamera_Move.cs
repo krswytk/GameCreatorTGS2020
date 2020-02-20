@@ -26,22 +26,22 @@ public class Maincamera_Move : MonoBehaviour
         pos_x = pos.x;
         pos_z = pos.z;
 
-        pos_y_def = Player_Move.Speed;
+        pos_y_def = Player_Move.Player_pos;
 
     }
 
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(Player_Move.pos.y);
+        //Debug.Log(Player_Move.pos.y);
         //Debug.Log(pos_y_def);
 
         //pos.y = Player_Move.Speed;
         //myTransform.position = pos;
         if (pos_y_def == 0)
-            pos_y_def = Player_Move.pos.y;
+            pos_y_def = Player_Move.Player_pos;
 
-        pos_y_num = pos_y + Player_Move.Speed - pos_y_def;
+        pos_y_num = pos_y + Player_Move.Player_pos - pos_y_def;
         //pos.z = 0;
         pos.y = pos_y_num;
         pos.z = pos_z;

@@ -94,7 +94,7 @@ public class GetScore : MonoBehaviour
         try { 
         
             sc = float.Parse(message);
-            Debug.Log(" SC = " + sc);
+            //Debug.Log(" SC = " + sc);
 
 
 

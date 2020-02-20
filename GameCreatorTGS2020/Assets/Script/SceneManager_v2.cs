@@ -21,7 +21,7 @@ public class SceneManager_v2 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(DebagMode);
+        //Debug.Log(DebagMode);
         //////////////////////////////////////////////////////ここからボタンを使用したシーン移動についてのスクリプト
         ///エンターもしくはマウス左クリックで次のシーンに移動
         ///スペースでランキング後の移動シーンの変更　デフォルトはタイトル
