@@ -51,9 +51,9 @@ public class Player_Move : MonoBehaviour
         if (Score == 0)
         {
             Score = GetScore.Score;
-            if(Mathf.Floor(((Score - 1000) / 100) * 2) < 6)
+            if(Mathf.Floor(((Score - 1000) / 100)) < 6)
             {
-                Num = Mathf.Floor(((Score - 1000) / 100) * 2);
+                Num = Mathf.Floor(((Score - 1000) / 100));
             }
             else
             {
