@@ -68,18 +68,21 @@ public class SceneManager_v2 : MonoBehaviour
                 if (SceneManager.GetActiveScene().name == "Title")
                 {
 
+                    GetScore.Score = 0;
                     FadeManager.Instance.LoadScene("Maine", 2.0f);
 
                 }
                 if (SceneManager.GetActiveScene().name == "Demo")
                 {
 
+                    GetScore.Score = 0;
                     FadeManager.Instance.LoadScene("Maine", 2.0f);
 
                 }
                 if (SceneManager.GetActiveScene().name == "Ranking")
                 {
 
+                    GetScore.Score = 0;
                     FadeManager.Instance.LoadScene("Maine", 2.0f);
 
                 }
@@ -106,6 +109,7 @@ public class SceneManager_v2 : MonoBehaviour
                     else
                     {
 
+                        GetScore.Score = 0;
                         FadeManager.Instance.LoadScene("Maine", 2.0f);
                     }
                     //SceneManager.LoadScene(SceneNumber);
@@ -130,7 +134,8 @@ public class SceneManager_v2 : MonoBehaviour
             }
             else
             {
-          
+
+                GetScore.Score = 0;
                 FadeManager.Instance.LoadScene("Maine", 2.0f);
             }
 
