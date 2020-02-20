@@ -130,8 +130,8 @@ GameObject:
   m_Component:
   - component: {fileID: 718883024}
   - component: {fileID: 718883023}
-  - component: {fileID: 718883022}
   - component: {fileID: 718883025}
+  - component: {fileID: 718883022}
   m_Layer: 0
   m_Name: Arudino_Manager
   m_TagString: Untagged
@@ -148,11 +148,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 718883021}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b950481495e01b2428c721cc3854d9a1, type: 3}
+  m_Script: {fileID: 11500000, guid: 05a743756fc7e8e44bac24a020b3d5db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sh: {fileID: 718883023}
-  SearchWord: A
+  serialHandler: {fileID: 718883023}
+  ver: {fileID: 8732016080196273204, guid: 23065d93ff0261d48bd2cd55f0967b0e, type: 3}
+  Score_text: {fileID: 1501855968940125905, guid: ce619c4e33522e74d93d1abda6f14bca,
+    type: 3}
+  noise: 3
 --- !u!114 &718883023
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -165,7 +168,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc97aa3602fead8409f7b71acf35ee9e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  portName: COM1
+  portName: COM3
   baudRate: 15200
 --- !u!4 &718883024
 Transform:
@@ -175,7 +178,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 718883021}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 105.85466, y: 472.47266, z: -73.32972}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
