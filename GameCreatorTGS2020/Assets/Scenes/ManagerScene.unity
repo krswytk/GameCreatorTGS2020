@@ -152,7 +152,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   serialHandler: {fileID: 718883023}
-  noise: 2
+  noise: 1
 --- !u!114 &718883023
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -165,7 +165,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc97aa3602fead8409f7b71acf35ee9e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  portName: COM7
   baudRate: 15200
 --- !u!4 &718883024
 Transform:
