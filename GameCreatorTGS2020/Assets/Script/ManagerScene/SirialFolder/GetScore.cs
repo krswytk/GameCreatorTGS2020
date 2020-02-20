@@ -16,11 +16,7 @@ public class GetScore : MonoBehaviour
     public static float sc;
     private float total;
     float time;
-
-    public GameObject ver = null;
-    public GameObject Score_text = null;
-    Text Sirial_text;
-    Text Scoretext;
+    
 
 
     public float noise = 3;
@@ -34,8 +30,6 @@ public class GetScore : MonoBehaviour
         {
             yuudati[lp] = 0f;
         }
-        Sirial_text = ver.GetComponent<Text>();
-        Scoretext = Score_text.GetComponent<Text>();
     }
 
     // Update is called once per frame
@@ -100,6 +94,7 @@ public class GetScore : MonoBehaviour
         try { 
         
             sc = float.Parse(message);
+            Debug.Log(" SC = " + sc);
 
 
 
