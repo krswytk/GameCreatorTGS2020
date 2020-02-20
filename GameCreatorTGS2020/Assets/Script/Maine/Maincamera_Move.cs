@@ -12,12 +12,16 @@ public class Maincamera_Move : MonoBehaviour
     float pos_y;
     float pos_z;
 
-    float pos_y_num = 0;
-    float pos_y_def = 0;
+    float pos_y_num;
+    float pos_y_def;
 
     // Start is called before the first frame update
     void Start()
     {
+        pos_y_num = 0;
+        pos_y_def = 0;
+
+
         myTransform = this.transform;
         Vector3 pos = myTransform.position;
         pos = myTransform.position;
