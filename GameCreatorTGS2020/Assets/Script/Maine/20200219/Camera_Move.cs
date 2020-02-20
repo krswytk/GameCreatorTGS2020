@@ -29,7 +29,7 @@ public class Camera_Move : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Num = Score.GetComponent<ScoreBreakBord>().anim_Num;
+        //Num = Score.GetComponent<ScoreBreakBord>().anim_Num;
         // 座標を取得
 
         if (Move == (Num * -0.5f))

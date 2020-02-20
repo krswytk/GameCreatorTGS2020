@@ -5,20 +5,23 @@ using UnityEngine.SceneManagement;
 
 public class SceneManager_v2 : MonoBehaviour
 {
-    static private bool TitleSwitch = false;
+    static private bool TitleSwitch;
     static public int SceneNumber;
-    static private float time;
-    public float outtime;
-    private static float scanTime;
+    private float time;
+    public float outtime = 10.0f;
+    private  float scanTime;
+    private bool DebagMode = false;
     // Start is called before the first frame update
     void Start()
     {
-      
+        scanTime = 0;
+        time = 0;
     }
 
     // Update is called once per frame
     void Update()
     {
+        Debug.Log(DebagMode);
         //////////////////////////////////////////////////////ここからボタンを使用したシーン移動についてのスクリプト
         ///エンターもしくはマウス左クリックで次のシーンに移動
         ///スペースでランキング後の移動シーンの変更　デフォルトはタイトル
@@ -27,62 +30,76 @@ public class SceneManager_v2 : MonoBehaviour
         scanTime += Time.deltaTime;
         if (Input.GetKey(KeyCode.D))
         {
-            FadeManager.Instance.LoadScene("Debag", 2.0f);
+            if (scanTime > 1.0f)
+            {
+                if (DebagMode == false)
+                {
+                    DebagMode = true;
+                    Application.LoadLevelAdditive("Debag");
+                }
+                else if(DebagMode == true)
+                {
+                    DebagMode = false;
+                    Application.UnloadLevel("Debag");
+                }
+                scanTime = 0;
+            }
         }
         if (SceneManager.GetActiveScene().name == "Title" || SceneManager.GetActiveScene().name == "Demo" || SceneManager.GetActiveScene().name == "Ranking")
         {
-            time += Time.deltaTime;
+            if (DebagMode == false)
+            {
+                
+                time += Time.deltaTime;
+            }
         }
         //Debug.Log(time);
 
         if (Input.GetKey(KeyCode.KeypadEnter) || Input.GetMouseButton(0))
         {
-            if (scanTime < 3.0f)
+            if (scanTime > 1.0f)
             {
-                return;
-            }
-            else
-            {
-                scanTime = 0;
-            }
-            SceneNumber++;
-
-
-            if (SceneManager.GetActiveScene().name == "Demo")
-            {
-              
-                FadeManager.Instance.LoadScene("Maine", 2.0f);
-
-            }
-            if (SceneManager.GetActiveScene().name == "Ranking")
-            {
+                //SceneNumber++;
                 
-                FadeManager.Instance.LoadScene("Maine", 2.0f);
-
-            }
-            if (SceneManager.GetActiveScene().name == "Maine")
-            {
-                FadeManager.Instance.LoadScene("Score", 2.0f);
-
-            }
-            if (SceneManager.GetActiveScene().name == "Score")
-            {
-                FadeManager.Instance.LoadScene("Replay", 2.0f);
-            }
-            if (SceneManager.GetActiveScene().name == "Replay")
-            {
-
-                if (TitleSwitch == true)
+                if (SceneManager.GetActiveScene().name == "Demo")
                 {
-                  
-                    FadeManager.Instance.LoadScene("Title", 2.0f);
-                }
-                else
-                {
-                  
+
                     FadeManager.Instance.LoadScene("Maine", 2.0f);
+
                 }
-                //SceneManager.LoadScene(SceneNumber);
+                if (SceneManager.GetActiveScene().name == "Ranking")
+                {
+
+                    FadeManager.Instance.LoadScene("Maine", 2.0f);
+
+                }
+                if (SceneManager.GetActiveScene().name == "Maine")
+                {
+                    FadeManager.Instance.LoadScene("Score", 2.0f);
+
+                }
+                if (SceneManager.GetActiveScene().name == "Score")
+                {
+                    FadeManager.Instance.LoadScene("Replay", 2.0f);
+                }
+                if (SceneManager.GetActiveScene().name == "Replay")
+                {
+
+                    if (TitleSwitch == true)
+                    {
+
+                        FadeManager.Instance.LoadScene("Title", 2.0f);
+                    }
+                    else
+                    {
+
+                        FadeManager.Instance.LoadScene("Maine", 2.0f);
+                    }
+                    //SceneManager.LoadScene(SceneNumber);
+                }
+
+                scanTime = 0;
+
             }
 
         }

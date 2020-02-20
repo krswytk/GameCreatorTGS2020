@@ -41,8 +41,8 @@ public class GetScore : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Sirial_text.text = sc.ToString();
-        Scoretext.text = Score.ToString();
+        //Sirial_text.text = sc.ToString();
+        //Scoretext.text = Score.ToString();
 
         //Debug.Log(sc);
         for (int lp = 0; lp < yuudati.Length; lp++)
