@@ -1490,9 +1490,6 @@ SpriteRenderer:
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 
---- !u!4 &565123735
-Transform:
-=======
 --- !u!1 &690236811
 
   m_ObjectHideFlags: 0
