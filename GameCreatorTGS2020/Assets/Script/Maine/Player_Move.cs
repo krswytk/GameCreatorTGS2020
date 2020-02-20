@@ -37,17 +37,17 @@ public class Player_Move : MonoBehaviour
         istrigger = false;
 
 
-
-
-        myTransform = this.transform;
-        pos = myTransform.position;
         //Speed = pos.y;
+
+
 
     }
 
     // Update is called once per frame
     void Update()
     {
+        feed_out = SceneManager_v2.PlayerMove;
+
         if (Input.GetKey(KeyCode.A))
         {
             //Speed = Speed - 0.1f;
@@ -95,7 +95,9 @@ public class Player_Move : MonoBehaviour
         //Debug.Log(Num);
         //Debug.Log("hit:"+hit);
         //Debug.Log(break_stop);
-        Player_pos = myTransform.position.y;
+        myTransform = this.transform;
+        pos = myTransform.position;
+        Player_pos = pos.y;
 
         if (hit == Num)
         {
@@ -103,6 +105,7 @@ public class Player_Move : MonoBehaviour
             if (time > 150)
             {
                 feed_out = true;
+                time = 0;
             }
         }
 
