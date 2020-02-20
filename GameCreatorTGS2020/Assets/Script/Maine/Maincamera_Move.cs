@@ -19,6 +19,7 @@ public class Maincamera_Move : MonoBehaviour
         Debug.Log(Player_Move.Player_pos + pos.y + posy_num);
 
         ch = true;
+        posy_num = 0;
     }
 
     // Update is called once per frame
