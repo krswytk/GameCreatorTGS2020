@@ -52,16 +52,27 @@ public class Break_anim : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (Player_Move.break_stop == false)
+        if (sound == false)
         {
-            if (sound == false)
+            if (collision.gameObject.tag == "Player")
             {
-                //shake.Shake(1.25f, 2.1f);
-                MainSpriteRenderer.sprite = After;
-                sound = true;
-                if (Sound_stop == false) audioSource.Play();
-                Destroy(this.gameObject.GetComponent<PolygonCollider2D>());
+                if (Player_Move.break_stop == false)
+                {
+                    //shake.Shake(1.25f, 2.1f);
+                    MainSpriteRenderer.sprite = After;
+                    sound = true;
+                    if (Sound_stop == false) audioSource.Play();
+                    Destroy(this.gameObject.GetComponent<PolygonCollider2D>());
+                    //Destroy(this.gameObject.GetComponent<BoxCollider2D>());
+                    this.gameObject.AddComponent<PolygonCollider2D>();
+                    this.gameObject.tag = "Break";
+                    Player_Move.hit++;
+                }
             }
+        }
+        else
+        {
+
         }
     }
 }

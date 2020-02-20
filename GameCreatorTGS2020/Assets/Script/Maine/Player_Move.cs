@@ -13,10 +13,12 @@ public class Player_Move : MonoBehaviour
 
     public static bool break_stop = false;
 
-    int hit = 0;
+    public static int hit = 0;
 
     float Score=0;
     float Num = 0;
+
+    bool istrigger=false;
 
     // Start is called before the first frame update
     void Start()
@@ -45,7 +47,14 @@ public class Player_Move : MonoBehaviour
         if (Score == 0)
         {
             Score = GetScore.Score;
-            Num = Mathf.Floor(((Score - 1000) / 100)*3);
+            if(Mathf.Floor(((Score - 1000) / 100) * 2) < 6)
+            {
+                Num = Mathf.Floor(((Score - 1000) / 100) * 2);
+            }
+            else
+            {
+                Num = 5;
+            }
         }
         else
         {
@@ -67,13 +76,41 @@ public class Player_Move : MonoBehaviour
             }
         }
         //Debug.Log(myTransform.position.y);
-        Debug.Log(GetScore.Score);
+        //Debug.Log(Num);
+        //Debug.Log("hit:"+hit);
+        //Debug.Log(break_stop);
         Player_pos = myTransform.position.y;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        hit++;
-        //Debug.Log(hit);
+        if (collision.gameObject.tag == "bord")
+        {
+            if (hit == Num)
+            {
+                istrigger = true;
+            }
+        }
+    }
+
+    private void OnTriggerStay2D(Collider2D col2)
+    {
+        if((hit-1 < Num)&&(istrigger==false))
+        {
+            if (col2.gameObject.tag == "Break")
+            {
+                this.gameObject.GetComponent<PolygonCollider2D>().isTrigger = true;
+            }
+        }
+    }
+
+
+
+    private void OnTriggerExit2D(Collider2D col)
+    {
+        if ((col.gameObject.tag == "Break")||(hit>6))
+        {
+            this.gameObject.GetComponent<PolygonCollider2D>().isTrigger = false;
+        }
     }
 }
