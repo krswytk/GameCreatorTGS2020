@@ -20,6 +20,10 @@ public class Player_Move : MonoBehaviour
 
     bool istrigger=false;
 
+    int time = 0;
+
+    public static bool feed_out = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -80,6 +84,16 @@ public class Player_Move : MonoBehaviour
         //Debug.Log("hit:"+hit);
         //Debug.Log(break_stop);
         Player_pos = myTransform.position.y;
+
+        if (hit == Num)
+        {
+            time++;
+            if (time > 150)
+            {
+                feed_out = true;
+            }
+        }
+
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -99,7 +113,7 @@ public class Player_Move : MonoBehaviour
         {
             if (col2.gameObject.tag == "Break")
             {
-                this.gameObject.GetComponent<PolygonCollider2D>().isTrigger = true;
+                this.gameObject.GetComponent<CircleCollider2D>().isTrigger = true;
             }
         }
     }
@@ -110,7 +124,7 @@ public class Player_Move : MonoBehaviour
     {
         if ((col.gameObject.tag == "Break")||(hit>6))
         {
-            this.gameObject.GetComponent<PolygonCollider2D>().isTrigger = false;
+            this.gameObject.GetComponent<CircleCollider2D>().isTrigger = false;
         }
     }
 }
