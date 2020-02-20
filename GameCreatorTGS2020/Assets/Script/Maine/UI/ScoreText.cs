@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class ScoreText : MonoBehaviour
 {
     private Text text;
-    private float Score = GetScore.Score;
+    private float Score;
     // Start is called before the first frame update
     void Start()
     {
@@ -16,6 +16,7 @@ public class ScoreText : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Score = GetScore.Score;
         text.text = Score.ToString();
     }
 }

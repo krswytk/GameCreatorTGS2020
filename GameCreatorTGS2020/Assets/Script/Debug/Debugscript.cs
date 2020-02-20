@@ -5,20 +5,19 @@ using UnityEngine.UI;
 
 public class Debugscript : MonoBehaviour
 {
-    public GameObject score_object = null;
-   // public int score_num = 0;
-  private float sc=GetScore.sc;
+    Text score_text;
+    private float sc;
     // Start is called before the first frame update
     void Start()
     {
-        
+        score_text = this.GetComponent<Text>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        Text score_text = score_object.GetComponent<Text>();
-        score_text.text = "Score:"+sc;
+        sc = GetScore.sc;
+        score_text.text = "現在の気圧値:"+sc;
       //  score_num += 1;
     }
 }
