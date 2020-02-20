@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class SceneManager_v2 : MonoBehaviour
 {
-    static private bool TitleSwitch;
+    static public bool TitleSwitch;
     static public int SceneNumber;
     private float time;
     public float outtime = 10.0f;
