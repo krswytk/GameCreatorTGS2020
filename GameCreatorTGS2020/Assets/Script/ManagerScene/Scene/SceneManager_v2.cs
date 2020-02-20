@@ -32,7 +32,7 @@ public class SceneManager_v2 : MonoBehaviour
         scanTime += Time.deltaTime;
         //PlayerMove = Player_Move.feed_out;
 
-        if (Input.GetKey(KeyCode.D))
+        if (Input.GetKeyDown(KeyCode.D))
         {
             if (scanTime > 1.0f)
             {
@@ -120,11 +120,11 @@ public class SceneManager_v2 : MonoBehaviour
             }
 
         }
-        else if (Input.GetKey(KeyCode.Space))
+        else if (Input.GetKeyDown(KeyCode.Space))
         {
             SetTitleSwotch();
         }
-        else if (Input.GetKey(KeyCode.LeftShift))
+        else if (Input.GetKeyDown(KeyCode.LeftShift))
         {
 
             if (TitleSwitch == true)
