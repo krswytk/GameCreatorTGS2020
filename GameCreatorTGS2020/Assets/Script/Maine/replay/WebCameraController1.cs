@@ -34,35 +34,40 @@ public class WebCameraController1 : MonoBehaviour
     void Update()
     {
         currentTime += Time.deltaTime;
-        if (currentTime > span)
+        if (GetScore.Score <= 0)
         {
-            Debug.LogFormat("{0}秒経過", span);
-            currentTime = 0f;
+            //Debug.Log(GetScore.Score);
+            if (currentTime > span)
+            {
+                Debug.LogFormat("{0}秒経過", span);
+                currentTime = 0f;
 
 
-            if (webcamTexture.isPlaying == false) webcamTexture.Play();
+                if (webcamTexture.isPlaying == false) webcamTexture.Play();
 
 
 
-            color32 = webcamTexture.GetPixels32();
+                color32 = webcamTexture.GetPixels32();
 
 
-            //GetComponent<Renderer>().material.mainTexture = texture;
+                //GetComponent<Renderer>().material.mainTexture = texture;
 
 
-            texture.SetPixels32(color32);
-            texture.Apply();
+                texture.SetPixels32(color32);
+                texture.Apply();
 
-            var bytes = texture.EncodeToPNG();
+                var bytes = texture.EncodeToPNG();
 
 
-            //Destroy(texture);
+                //Destroy(texture);
 
-            File.WriteAllBytes(Application.dataPath + "/Resources/output_images/camera" + i + ".png", bytes);
-            lp = i;
-            i++;
-            if (i == 150)
-                i = 0;
+                File.WriteAllBytes(Application.dataPath + "/Resources/output_images/camera" + i + ".png", bytes);
+                Debug.Log("camera" + i);
+                lp = i;
+                i++;
+                if (i == 80)
+                    i = 0;
+            }
         }
     }
 

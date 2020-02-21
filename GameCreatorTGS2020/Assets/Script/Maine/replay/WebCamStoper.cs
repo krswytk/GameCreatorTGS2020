@@ -4,11 +4,12 @@ using UnityEngine;
 
 public class WebCamStoper : MonoBehaviour
 {
-    bool wcon=true;
+    //bool wcon=true;
     void Start()
     {
         //Debug.Log(WebCameraController1.webcamTexture.isPlaying);
-        if (WebCameraController1.webcamTexture.isPlaying == false&& wcon == true) WebCameraController1.webcamTexture.Play();
+        //if (WebCameraController1.webcamTexture.isPlaying == false&& wcon == true) WebCameraController1.webcamTexture.Play();
+        if (WebCameraController1.webcamTexture.isPlaying == false) WebCameraController1.webcamTexture.Play();
         //Debug.Log(WebCameraController1.webcamTexture.isPlaying);
     }
 
@@ -18,7 +19,7 @@ public class WebCamStoper : MonoBehaviour
         Debug.Log(WebCameraController1.webcamTexture.isPlaying);
         if (WebCameraController1.webcamTexture.isPlaying == true) WebCameraController1.webcamTexture.Stop();
         Debug.Log(WebCameraController1.webcamTexture.isPlaying);
-        wcon = false;
+        //wcon = false;
 
     }
 }
