@@ -1,0 +1,19 @@
+fileFormatVersion: 2
+guid: 852cddf2011888645b55057e023df373
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - Before: {instanceID: 0}
+  - After: {instanceID: 0}
+  - Bin: {fileID: 8300000, guid: 9bd43affe7ed2c74dbbd3ce64ee10abd, type: 3}
+  - Chair: {fileID: 8300000, guid: e9bc97dd396873c47a7a7767021005af, type: 3}
+  - Paper: {fileID: 8300000, guid: 109a2c283b12ccb4c9916336ac51446a, type: 3}
+  - Shed: {fileID: 8300000, guid: 89250c47e15e4bb41b5907d17fd1124b, type: 3}
+  - sofa_bed: {fileID: 8300000, guid: e3f708c55a8f03e45a49729b881ee06e, type: 3}
+  - TV: {fileID: 8300000, guid: b8e138409f0444347acc19d556d40663, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

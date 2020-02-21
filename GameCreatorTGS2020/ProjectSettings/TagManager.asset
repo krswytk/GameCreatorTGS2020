@@ -11,6 +11,13 @@ TagManager:
   - Break
   - bord
   - bill_rb
+  - Player_rb
+  - Bin
+  - Chair
+  - paper
+  - Shed
+  - sofa_bed
+  - TV
   layers:
   - Default
   - TransparentFX
