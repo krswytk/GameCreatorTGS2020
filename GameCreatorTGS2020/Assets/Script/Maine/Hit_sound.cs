@@ -4,8 +4,11 @@ using UnityEngine;
 
 public class Hit_sound : MonoBehaviour
 {
-    public Sprite Before;
     public Sprite After;
+    public Sprite After2;
+    public Sprite After3;
+    public Sprite After4;
+    public Sprite After5;
 
     SpriteRenderer MainSpriteRenderer;
 
@@ -20,6 +23,8 @@ public class Hit_sound : MonoBehaviour
     public AudioClip Shed;
     public AudioClip sofa_bed;
     public AudioClip TV;
+    public AudioClip book;
+    public AudioClip Magic;
 
 
     CameraShake shake;
@@ -50,6 +55,8 @@ public class Hit_sound : MonoBehaviour
         if (this.gameObject.tag == "Shed") audioSource.clip = Shed;
         if (this.gameObject.tag == "sofa_bed") audioSource.clip = sofa_bed;
         if (this.gameObject.tag == "TV") audioSource.clip = TV;
+        if (this.gameObject.tag == "book") audioSource.clip = book;
+        if (this.gameObject.tag == "Magic") audioSource.clip = Magic;
 
     }
 
@@ -65,7 +72,17 @@ public class Hit_sound : MonoBehaviour
         if (collision.gameObject.tag == "Player_rb")
         {
             sound_on = true;
-            //MainSpriteRenderer.sprite = After;
+            MainSpriteRenderer.sprite = After;
+            audioSource.Play();
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Player_rb")
+        {
+            sound_on = true;
+            MainSpriteRenderer.sprite = After;
             audioSource.Play();
         }
     }

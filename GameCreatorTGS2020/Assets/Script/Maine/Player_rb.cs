@@ -44,7 +44,8 @@ public class Player_rb : MonoBehaviour
         if (off == true)
         {
             this.gameObject.GetComponent<PolygonCollider2D>().enabled = false;
-            
+            //this.gameObject.GetComponent<PolygonCollider2D>().isTrigger = true;
+
         }
     }
 
