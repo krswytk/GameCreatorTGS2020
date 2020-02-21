@@ -4,8 +4,11 @@ using UnityEngine;
 
 public class Hit_sound : MonoBehaviour
 {
-    public Sprite Before;
     public Sprite After;
+    public Sprite After2;
+    public Sprite After3;
+    public Sprite After4;
+    public Sprite After5;
 
     SpriteRenderer MainSpriteRenderer;
 
@@ -65,7 +68,7 @@ public class Hit_sound : MonoBehaviour
         if (collision.gameObject.tag == "Player_rb")
         {
             sound_on = true;
-            //MainSpriteRenderer.sprite = After;
+            MainSpriteRenderer.sprite = After;
             audioSource.Play();
         }
     }
