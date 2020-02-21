@@ -60,6 +60,7 @@ public class Break_anim : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+
         if (sound_on == false)
         {
             if (collision.gameObject.tag == "Player")
@@ -78,9 +79,14 @@ public class Break_anim : MonoBehaviour
                 }
             }
         }
-        else
-        {
+    }
 
+    private void OnCollisionEnter2D(Collision2D col)
+    {
+        if ((col.gameObject.tag == "Player_rb") && (Player_Move.time != 0))
+        {
+            Debug.Log("114514");
+            Player_rb.off = true;
         }
     }
 }

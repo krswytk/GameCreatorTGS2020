@@ -68,15 +68,5 @@ public class Hit_sound : MonoBehaviour
             //MainSpriteRenderer.sprite = After;
             audioSource.Play();
         }
-        /*audioSource.Play();
-        if (sound_on == false)
-        {
-            if (collision.gameObject.tag == "Player_rb")
-            {
-                sound_on = true;
-                //MainSpriteRenderer.sprite = After;
-                audioSource.Play();
-            }
-        }*/
     }
 }
