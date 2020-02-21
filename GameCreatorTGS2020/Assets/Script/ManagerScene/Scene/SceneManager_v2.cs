@@ -32,6 +32,8 @@ public class SceneManager_v2 : MonoBehaviour
         scanTime += Time.deltaTime;
         PlayerMove = Player_Move.feed_out;
 
+
+        /*
         if (Input.GetKeyDown(KeyCode.D))
         {
             if (scanTime > 1.0f)
@@ -49,6 +51,8 @@ public class SceneManager_v2 : MonoBehaviour
                 scanTime = 0;
             }
         }
+
+        */
         if (SceneManager.GetActiveScene().name == "Title" || SceneManager.GetActiveScene().name == "Demo" || SceneManager.GetActiveScene().name == "Ranking")
         {
             if (DebagMode == false)

@@ -513,7 +513,7 @@ Camera:
     m_Bits: 4294967295
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
-  m_TargetDisplay: 0
+  m_TargetDisplay: 1
   m_TargetEye: 0
   m_HDR: 1
   m_AllowMSAA: 0
@@ -547,6 +547,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: WebCamStoper_ScoreScenes
+      objectReference: {fileID: 0}
+    - target: {fileID: 3041125016624415091, guid: 3d07c936d932526478fbfb5ce22cc9c1,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2468787167603230765, guid: 3d07c936d932526478fbfb5ce22cc9c1,
         type: 3}
@@ -762,7 +767,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 0
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_TargetDisplay: 0
+  m_TargetDisplay: 1
 --- !u!224 &699594808
 RectTransform:
   m_ObjectHideFlags: 0

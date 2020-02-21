@@ -60,6 +60,12 @@ public class Break_anim : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        if ((collision.gameObject.tag == "Player_rb") && (Player_Move.time > 10))
+        {
+            Debug.Log("114514");
+            Player_rb.off = true;
+        }
+
         if (sound_on == false)
         {
             if (collision.gameObject.tag == "Player")
@@ -70,7 +76,7 @@ public class Break_anim : MonoBehaviour
                     MainSpriteRenderer.sprite = After;
                     sound_on = true;
                     if (Sound_stop == false) audioSource.Play();
-                    Destroy(this.gameObject.GetComponent<PolygonCollider2D>());
+                    Destroy(this.gameObject.GetComponent<BoxCollider2D>());
                     //Destroy(this.gameObject.GetComponent<BoxCollider2D>());
                     this.gameObject.AddComponent<PolygonCollider2D>();
                     this.gameObject.tag = "Break";
@@ -78,9 +84,23 @@ public class Break_anim : MonoBehaviour
                 }
             }
         }
-        else
-        {
+    }
 
+    private void OnCollisionEnter2D(Collision2D col)
+    {
+        if ((col.gameObject.tag == "Player_rb") && (Player_Move.time != 0))
+        {
+            //Debug.Log("114514");
+           // Player_rb.off = true;
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D col)
+    {
+        if ((col.gameObject.tag == "Player_rb") && (Player_Move.time != 0))
+        {
+            //Debug.Log("114514");
+            //Player_rb.off = true;
         }
     }
 }
