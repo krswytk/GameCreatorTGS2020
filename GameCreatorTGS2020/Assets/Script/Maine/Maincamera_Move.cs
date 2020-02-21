@@ -16,7 +16,7 @@ public class Maincamera_Move : MonoBehaviour
         pos = CameraTransform.localPosition;
 
         posy_num = Player_Move.Player_pos - pos.y;
-        Debug.Log(Player_Move.Player_pos + pos.y + posy_num);
+        //Debug.Log(Player_Move.Player_pos + pos.y + posy_num);
 
         ch = true;
         posy_num = 0;
@@ -29,15 +29,15 @@ public class Maincamera_Move : MonoBehaviour
 
         if(ch == true && Player_Move.Player_pos != 0)
         {
-            Debug.Log(Player_Move.Player_pos);
-            Debug.Log(pos.y);
+            //Debug.Log(Player_Move.Player_pos);
+            //Debug.Log(pos.y);
             posy_num = Player_Move.Player_pos - pos.y;
             ch = false;
         }
 
         if (ch == false)
         {
-            Debug.Log(Player_Move.Player_pos + " --- " + pos.y + " --- " + posy_num);
+            //Debug.Log(Player_Move.Player_pos + " --- " + pos.y + " --- " + posy_num);
 
             pos.y = Player_Move.Player_pos - posy_num;
 
