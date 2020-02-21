@@ -16,7 +16,7 @@ public class Player_Move : MonoBehaviour
     public static int hit;
 
     float Score;
-    float Num;
+    public static float Num;
 
     bool istrigger;
 
@@ -37,17 +37,17 @@ public class Player_Move : MonoBehaviour
         istrigger = false;
 
 
-
-
-        myTransform = this.transform;
-        pos = myTransform.position;
         //Speed = pos.y;
+
+
 
     }
 
     // Update is called once per frame
     void Update()
     {
+        feed_out = SceneManager_v2.PlayerMove;
+
         if (Input.GetKey(KeyCode.A))
         {
             //Speed = Speed - 0.1f;
@@ -63,9 +63,10 @@ public class Player_Move : MonoBehaviour
         if (Score == 0)
         {
             Score = GetScore.Score;
-            if (Mathf.Floor(((Score - 1000) / 100) * 3) < 6)
+            if (Mathf.Floor(((Score - 1000) / 100) * 2) < 6)
             {
-                Num = Mathf.Floor(((Score - 1000) / 100) * 3);
+                Num = Mathf.Floor(((Score - 1000) / 100) * 2);
+                if (Num < 0) Num = 0;
             }
             else
             {
@@ -74,14 +75,14 @@ public class Player_Move : MonoBehaviour
         }
         else
         {
-            if (hit < Num)
+            if ((hit < Num) && (Num != 0))
             {
                 this.gameObject.GetComponent<Rigidbody2D>().gravityScale = 1;
                 //Speed = Speed - 1.4f;
                 //pos.y = Speed;
                 //myTransform.position = pos;  // 座標を設定
             }
-            if (hit == Num)
+            if ((hit == Num) && (Num != 0))
             {
                 break_stop = true;
                 //this.gameObject.GetComponent<Rigidbody2D>().gravityScale = 0;
@@ -95,15 +96,20 @@ public class Player_Move : MonoBehaviour
         Debug.Log(Num);
         //Debug.Log("hit:"+hit);
         //Debug.Log(break_stop);
-        Player_pos = myTransform.position.y;
+        myTransform = this.transform;
+        pos = myTransform.position;
+        Player_pos = pos.y;
 
-        if (hit == Num)
+        if ((hit == Num) && (Num != 0))
         {
             time++;
             if (time > 150)
             {
                 feed_out = true;
+                time = 0;
             }
+            this.gameObject.GetComponent<CircleCollider2D>().enabled = true;
+            Player_rb.off = true;
         }
 
     }
@@ -117,7 +123,7 @@ public class Player_Move : MonoBehaviour
 
         if (collision.gameObject.tag == "bord")
         {
-            if (hit == Num)
+            if ((hit == Num) && (Num != 0))
             {
                 istrigger = true;
             }

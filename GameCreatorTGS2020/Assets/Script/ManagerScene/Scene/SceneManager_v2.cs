@@ -12,7 +12,7 @@ public class SceneManager_v2 : MonoBehaviour
     private  float scanTime;
     private bool DebagMode = false;
 
-    //private bool PlayerMove;
+    public static bool PlayerMove;
     // Start is called before the first frame update
     void Start()
     {
@@ -30,7 +30,7 @@ public class SceneManager_v2 : MonoBehaviour
         ///左シフトでタイトルもしくはメインへの強制移動　移動先は上記記述を参照
         ///
         scanTime += Time.deltaTime;
-        //PlayerMove = Player_Move.feed_out;
+        PlayerMove = Player_Move.feed_out;
 
         if (Input.GetKeyDown(KeyCode.D))
         {
@@ -183,11 +183,21 @@ public class SceneManager_v2 : MonoBehaviour
         }
 
 
-
-        if (Player_Move.feed_out == true)
+        
+        if (PlayerMove == true)
         {
+            Player_Move.feed_out = false;
+            PlayerMove = false;
+            Debug.Log("シーンマネＶＥＲ２で移動" +"史ね" );
             FadeManager.Instance.LoadScene("Score", 2.0f);
+            
         }
+        /*if(GetScore.Score > 0)
+        {
+            GetScore.Score = -GetScore.Score;
+            Debug.Log("シーンマネＶＥＲ２で移動" + "史ね");
+            FadeManager.Instance.LoadScene("Score", 2.0f);
+        }*/
 
         //////////////////////////////////////////ここまで時間経過によるタイトルとデモの移動
     }

@@ -1,5 +1,15 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: 532cec2fcec55314eb41e4ac3ad5349d
+=======
+<<<<<<< HEAD:GameCreatorTGS2020/Assets/Resources.meta
+guid: 91475303a248f0143ab46f6a5198d328
+=======
+
+guid: e319e9339c9282d40ba45ded1dc878b1
+
+>>>>>>> 464f40595d9b8071301a726de13e9fe3b9ae2696:GameCreatorTGS2020/Assets/Sound/sound.meta
+>>>>>>> 464f40595d9b8071301a726de13e9fe3b9ae2696
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}
