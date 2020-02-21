@@ -37,7 +37,7 @@ public class Maincamera_Move : MonoBehaviour
 
         if (ch == false)
         {
-            Debug.Log(Player_Move.Player_pos + " --- " + pos.y + " --- " + posy_num + " --- " + playerY);
+            //Debug.Log(Player_Move.Player_pos + " --- " + pos.y + " --- " + posy_num + " --- " + playerY);
 
             pos.y = playerY - posy_num;
 

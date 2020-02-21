@@ -103,7 +103,7 @@ public class Player_Move : MonoBehaviour
         ///
         pos = myTransform.position;
         Player_pos = pos.y;///cameramove
-        Debug.Log(pos.y);
+        //Debug.Log(pos.y);
         ///////////////////
 
 
