@@ -31,7 +31,7 @@ public class My_Score : MonoBehaviour
         //ScoreNum = ScoreNum + 1;
 
         n = Mathf.FloorToInt(ScoreNum);
-        Debug.Log(n);
+        //Debug.Log(n);
         Text uiText = GetComponent<Text>();
         uiText.text = "きみのスコアは:" + n;
         if (highflag == 1)
