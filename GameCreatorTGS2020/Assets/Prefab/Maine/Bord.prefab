@@ -21,7 +21,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1286812525376417545
 Transform:
   m_ObjectHideFlags: 0
@@ -243,11 +243,11 @@ MonoBehaviour:
   After: {fileID: 21300000, guid: 5479c1c251ee56e48a698914204da9bc, type: 3}
   Break_borad: 0
   Sound_stop: 0
-  baki1: {fileID: 8300000, guid: 5417bd2fefbbae640849df786bb9353b, type: 3}
-  baki2: {fileID: 8300000, guid: ce6a4a89d1aa93446add0df60b0c2066, type: 3}
-  baki3: {fileID: 8300000, guid: b193f7b860411a64f8b63c40db47ff11, type: 3}
-  baki4: {fileID: 8300000, guid: 20d2a3b6b6f1c064587ddfa6eda3e66d, type: 3}
-  baki5: {fileID: 8300000, guid: 4b69081000c74f84e9d5fbd7d410ebbf, type: 3}
+  baki1: {fileID: 8300000, guid: ba65e7b9da30e6243b89a716e1d2dd41, type: 3}
+  baki2: {fileID: 8300000, guid: d9c668a2bff83414bbfe186bf96e61b1, type: 3}
+  baki3: {fileID: 8300000, guid: d6c0e9ff85ddf624eb108fc59438d022, type: 3}
+  baki4: {fileID: 8300000, guid: 93c419a9010451841affef71adee5d52, type: 3}
+  baki5: {fileID: 8300000, guid: cdd05886430bd494db29977c2f35de03, type: 3}
 --- !u!60 &3142983024205956496
 PolygonCollider2D:
   m_ObjectHideFlags: 0
