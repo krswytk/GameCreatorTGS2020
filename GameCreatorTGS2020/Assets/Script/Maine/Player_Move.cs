@@ -107,6 +107,8 @@ public class Player_Move : MonoBehaviour
                 feed_out = true;
                 time = 0;
             }
+            this.gameObject.GetComponent<CircleCollider2D>().enabled = true;
+            Player_rb.off = true;
         }
 
     }
