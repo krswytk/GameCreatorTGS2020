@@ -92,7 +92,7 @@ public class Player_Move : MonoBehaviour
             }
         }
         //Debug.Log(myTransform.position.y);
-        Debug.Log(Num);
+        //Debug.Log(Num);
         //Debug.Log("hit:"+hit);
         //Debug.Log(break_stop);
         myTransform = this.transform;
