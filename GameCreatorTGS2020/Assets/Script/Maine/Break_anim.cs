@@ -85,7 +85,7 @@ public class Break_anim : MonoBehaviour
     {
         if ((col.gameObject.tag == "Player_rb") && (Player_Move.time != 0))
         {
-            Debug.Log("114514");
+            //Debug.Log("114514");
             Player_rb.off = true;
         }
     }

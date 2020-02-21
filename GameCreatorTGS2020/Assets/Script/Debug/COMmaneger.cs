@@ -78,7 +78,7 @@ public class COMmaneger : MonoBehaviour
                 Debug.Log("COM9");
                 break;
             default:
-                Debug.Log("該当値なし");
+                //Debug.Log("該当値なし");
                 break;
         }
         num = 100;
