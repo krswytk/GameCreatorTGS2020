@@ -84,6 +84,7 @@ public class FadeManager : MonoBehaviour
 
 				GUI.Box (new Rect (10, 10, 300, 50 + scenes.Count * 25), "Fade Manager(Debug Mode)");
 				GUI.Label (new Rect (20, 30, 280, 20), "Current Scene : " + SceneManager.GetActiveScene ().name);
+                //Debug.Log(SceneManager.GetActiveScene().name);
 
 				int i = 0;
 				foreach (string sceneName in scenes) {
@@ -107,8 +108,10 @@ public class FadeManager : MonoBehaviour
 	/// <param name='interval'>暗転にかかる時間(秒)</param>
 	public void LoadScene (string scene, float interval)
 	{
+        Debug.Log("フェード開始");
 		StartCoroutine (TransScene (scene, interval));
-	}
+        Debug.Log("フェード終了");
+    }
 
 	/// <summary>
 	/// シーン遷移用コルーチン .

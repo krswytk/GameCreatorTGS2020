@@ -192,7 +192,7 @@ public class SceneManager_v2 : MonoBehaviour
         {
             Player_Move.feed_out = false;
             PlayerMove = false;
-            Debug.Log("シーンマネＶＥＲ２で移動" +"史ね" );
+            //Debug.Log("シーンマネＶＥＲ２で移動" +"史ね" );
             FadeManager.Instance.LoadScene("Score", 2.0f);
             
         }
