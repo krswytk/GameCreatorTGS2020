@@ -128,9 +128,10 @@ public class FadeManager : MonoBehaviour
 		
 		//シーン切替 .
 		SceneManager.LoadScene (scene);
+        //Application.LoadLevelAdditive("Debag");
 
-		//だんだん明るく .
-		time = 0;
+        //だんだん明るく .
+        time = 0;
 		while (time <= interval) {
 			this.fadeAlpha = Mathf.Lerp (1f, 0f, time / interval);
 			time += Time.deltaTime;
