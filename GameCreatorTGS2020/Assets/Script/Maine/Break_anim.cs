@@ -60,7 +60,7 @@ public class Break_anim : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if ((collision.gameObject.tag == "Player_rb") && (Player_Move.time > 10))
+        if ((collision.gameObject.tag == "Player_rb") && (Player_Move.time > 2))
         {
             Debug.Log("114514");
             Player_rb.off = true;
