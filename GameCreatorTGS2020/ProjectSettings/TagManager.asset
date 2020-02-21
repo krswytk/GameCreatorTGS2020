@@ -18,6 +18,7 @@ TagManager:
   - Shed
   - sofa_bed
   - TV
+  - konbini_RB
   layers:
   - Default
   - TransparentFX

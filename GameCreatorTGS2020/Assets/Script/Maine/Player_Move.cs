@@ -20,7 +20,7 @@ public class Player_Move : MonoBehaviour
 
     bool istrigger;
 
-    int time;
+    public static int time;
 
     public static bool feed_out;
 
@@ -116,7 +116,7 @@ public class Player_Move : MonoBehaviour
                 time = 0;
             }
             this.gameObject.GetComponent<CircleCollider2D>().enabled = true;
-            Player_rb.off = true;
+            //Player_rb.off = true;
         }
 
     }
