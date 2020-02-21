@@ -548,6 +548,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: WebCamStoper_ScoreScenes
       objectReference: {fileID: 0}
+    - target: {fileID: 3041125016624415091, guid: 3d07c936d932526478fbfb5ce22cc9c1,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2468787167603230765, guid: 3d07c936d932526478fbfb5ce22cc9c1,
         type: 3}
       propertyPath: m_LocalPosition.x

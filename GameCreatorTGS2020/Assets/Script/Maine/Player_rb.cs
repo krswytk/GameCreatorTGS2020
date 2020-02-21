@@ -47,4 +47,12 @@ public class Player_rb : MonoBehaviour
             
         }
     }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "konbini_RB")
+        {
+            Destroy(collision.gameObject);
+        }
+    }
 }
