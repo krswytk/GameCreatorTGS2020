@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class WebCameraTest : MonoBehaviour
+public class WebCameraTest2 : MonoBehaviour
 {
     public RawImage rawImage;
     public GameObject Image;
