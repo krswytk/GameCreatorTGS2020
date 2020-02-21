@@ -17,9 +17,9 @@ public class Score_Text : MonoBehaviour
     void Update()
     {
 
-        Num = Score.GetComponent<ScoreBreakBord>().Score;
+        Num = Player_Move.Num;
         //Debug.Log(Num);
         Text uiText = GetComponent<Text>();
-        uiText.text = Num + "";
+        uiText.text = Player_Move.Num + "";
     }
 }
