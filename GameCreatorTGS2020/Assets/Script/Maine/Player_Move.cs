@@ -39,6 +39,9 @@ public class Player_Move : MonoBehaviour
 
         //Speed = pos.y;
 
+        myTransform = this.transform;
+        pos = myTransform.position;
+        Player_pos = 0;
 
 
     }
@@ -46,21 +49,20 @@ public class Player_Move : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        feed_out = SceneManager_v2.PlayerMove;
-
         if (Input.GetKey(KeyCode.A))
         {
             //Speed = Speed - 0.1f;
             //pos.y = Speed;
             //myTransform.position = pos;  // 座標を設定
-            this.gameObject.GetComponent<Rigidbody2D>().gravityScale = 1;
+            //this.gameObject.GetComponent<Rigidbody2D>().gravityScale = 1;
+            Num = 4;
         }
         if (Input.GetKey(KeyCode.B))
         {
             Num++;
         }
 
-        if (Score == 0)
+        if ((Score == 0)&&(Num<1))
         {
             Score = GetScore.Score;
             if (Mathf.Floor(((Score - 1000) / 100) * 2) < 6)
@@ -93,12 +95,17 @@ public class Player_Move : MonoBehaviour
             }
         }
         //Debug.Log(myTransform.position.y);
-        Debug.Log(Num);
+        //Debug.Log(Num);
         //Debug.Log("hit:"+hit);
         //Debug.Log(break_stop);
-        myTransform = this.transform;
+
+        //////////////////////
+        ///
         pos = myTransform.position;
-        Player_pos = pos.y;
+        Player_pos = pos.y;///cameramove
+        Debug.Log(pos.y);
+        ///////////////////
+
 
         if ((hit == Num) && (Num != 0))
         {
