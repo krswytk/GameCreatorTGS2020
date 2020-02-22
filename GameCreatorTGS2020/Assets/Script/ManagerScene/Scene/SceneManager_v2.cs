@@ -8,7 +8,13 @@ public class SceneManager_v2 : MonoBehaviour
     static public bool TitleSwitch;
     static public int SceneNumber;
     private float time;
-    public float outtime = 10.0f;
+
+    
+    public float outTitelDeomo = 10.0f;
+    public float outDeomoRank = 10.0f;
+    public float outRankTitel = 10.0f;
+
+
     private  float scanTime;
     private bool DebagMode = false;
 
@@ -154,7 +160,7 @@ public class SceneManager_v2 : MonoBehaviour
             {
                 Application.Quit();
             }//////////////ゲーム終了
-            if (time > outtime)
+            if (time > outTitelDeomo)
             {
                 time = 0;
                 //SceneManager.LoadScene(1);
@@ -165,7 +171,7 @@ public class SceneManager_v2 : MonoBehaviour
 
         if (SceneManager.GetActiveScene().name == "Demo")
         {
-            if (time > outtime)
+            if (time > outDeomoRank)
             {
                 time = 0;
                 //SceneManager.LoadScene(0);
@@ -177,7 +183,7 @@ public class SceneManager_v2 : MonoBehaviour
         if (SceneManager.GetActiveScene().name == "Ranking")
         {
         
-            if (time > outtime)
+            if (time > outRankTitel)
             {
                 time = 0;
                 //SceneManager.LoadScene(0);
