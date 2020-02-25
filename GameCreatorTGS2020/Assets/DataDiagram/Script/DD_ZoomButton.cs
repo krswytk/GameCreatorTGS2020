@@ -43,9 +43,7 @@ public class DD_ZoomButton : MonoBehaviour {
         RTparams[0].parent = m_DataDiagram.transform.parent;
         rt = m_DataDiagram.GetComponent<RectTransform>();
 
-        RTparams[0].rect = DD_CalcRectTransformHelper.CalcLocalRect(rt.anchorMin, rt.anchorMax,
-            RTparams[0].parent.GetComponent<RectTransform>().rect.size, rt.pivot, 
-            rt.anchoredPosition, rt.rect);
+        RTparams[0].rect = DD_CalcRectTransformHelper.CalcLocalRect(rt.anchorMin, rt.anchorMax,RTparams[0].parent.GetComponent<RectTransform>().rect.size, rt.pivot,rt.anchoredPosition, rt.rect);
 
 
         RTparams[1].parent = GetComponentInParent<Canvas>().transform;
