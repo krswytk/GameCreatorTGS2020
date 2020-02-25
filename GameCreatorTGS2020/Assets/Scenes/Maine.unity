@@ -209,8 +209,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 48844067}
-  - component: {fileID: 48844069}
-  - component: {fileID: 48844068}
+  - component: {fileID: 48844070}
   m_Layer: 0
   m_Name: Camera_Shake
   m_TagString: Untagged
@@ -233,31 +232,23 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &48844068
+--- !u!114 &48844070
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 48844066}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 77fdbcee281cac345889b54a6b15ec58, type: 3}
+  m_Script: {fileID: 11500000, guid: 256b75a7a913e7a469f4191b8938e264, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Score: {fileID: 0}
---- !u!114 &48844069
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 48844066}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ffb55af0dd4f8404ba1aa8db07ad61e6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  maximumTranslationShake: {x: 1, y: 1, z: 1}
+  maximumAngularShake: {x: 5, y: 5, z: 5}
+  frequency: 5
+  traumaExponent: 1
+  recoverySpeed: 1
 --- !u!1001 &86210224
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1793,6 +1784,11 @@ PrefabInstance:
       propertyPath: timeManager
       value: 
       objectReference: {fileID: 519420033}
+    - target: {fileID: 7044402433916382172, guid: 712b19600ffb5d04792672cd952b3316,
+        type: 3}
+      propertyPath: m_shakeable
+      value: 
+      objectReference: {fileID: 48844070}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 712b19600ffb5d04792672cd952b3316, type: 3}
 --- !u!4 &298323732 stripped
@@ -2167,6 +2163,11 @@ PrefabInstance:
       propertyPath: timeManager
       value: 
       objectReference: {fileID: 519420033}
+    - target: {fileID: 7044402433916382172, guid: 712b19600ffb5d04792672cd952b3316,
+        type: 3}
+      propertyPath: m_shakeable
+      value: 
+      objectReference: {fileID: 48844070}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 712b19600ffb5d04792672cd952b3316, type: 3}
 --- !u!4 &346322039 stripped
@@ -2332,6 +2333,11 @@ PrefabInstance:
       propertyPath: timeManager
       value: 
       objectReference: {fileID: 519420033}
+    - target: {fileID: 7044402433916382172, guid: 712b19600ffb5d04792672cd952b3316,
+        type: 3}
+      propertyPath: m_shakeable
+      value: 
+      objectReference: {fileID: 48844070}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 712b19600ffb5d04792672cd952b3316, type: 3}
 --- !u!4 &364620636 stripped
@@ -11842,6 +11848,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 722612002526526862, guid: 09b50f0d0a7340d4a820afe6838c3973,
         type: 3}
+    - target: {fileID: 7044402433916382172, guid: 712b19600ffb5d04792672cd952b3316,
+        type: 3}
+      propertyPath: m_shakeable
+      value: 
+      objectReference: {fileID: 48844070}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 712b19600ffb5d04792672cd952b3316, type: 3}
 --- !u!4 &1308357079 stripped
@@ -16319,6 +16330,11 @@ PrefabInstance:
       propertyPath: timeManager
       value: 
       objectReference: {fileID: 519420033}
+    - target: {fileID: 7044402433916382172, guid: 712b19600ffb5d04792672cd952b3316,
+        type: 3}
+      propertyPath: m_shakeable
+      value: 
+      objectReference: {fileID: 48844070}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 712b19600ffb5d04792672cd952b3316, type: 3}
 --- !u!4 &1827547983 stripped
@@ -17104,6 +17120,11 @@ PrefabInstance:
       propertyPath: timeManager
       value: 
       objectReference: {fileID: 519420033}
+    - target: {fileID: 7044402433916382172, guid: 712b19600ffb5d04792672cd952b3316,
+        type: 3}
+      propertyPath: m_shakeable
+      value: 
+      objectReference: {fileID: 48844070}
     - target: {fileID: 1286812525376417550, guid: 712b19600ffb5d04792672cd952b3316,
         type: 3}
       propertyPath: m_Enabled
