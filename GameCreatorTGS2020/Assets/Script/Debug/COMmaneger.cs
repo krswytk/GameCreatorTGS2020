@@ -19,69 +19,67 @@ public class COMmaneger : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.anyKeyDown)
-        {
-            keycode = Input.inputString;
-            num = int.Parse(keycode);
-            Debug.Log(num);
+        //\
+        if (Input.GetKeyDown(KeyCode.Alpha0)){
+            SerialHandler.portName = "COM0";
+            COMCH = true;
+            Debug.Log("COM0");
         }
-        switch (num)
+        if (Input.GetKeyDown(KeyCode.Alpha1))
         {
-            case 0:
-                SerialHandler.portName = "COM0";
-                COMCH = true;
-                Debug.Log("COM0");
-                break;
-            case 1:
-                SerialHandler.portName = "COM1";
-                COMCH = true;
-                Debug.Log("COM1");
-                break;
-            case 2:
-                SerialHandler.portName = "COM2";
-                COMCH = true;
-                Debug.Log("COM2");
-                break;
-            case 3:
-                SerialHandler.portName = "COM3";
-                COMCH = true;
-                Debug.Log("COM3");
-                break;
-            case 4:
-                SerialHandler.portName = "COM4";
-                COMCH = true;
-                Debug.Log("COM4");
-                break;
-            case 5:
-                SerialHandler.portName = "COM5";
-                COMCH = true;
-                Debug.Log("COM5");
-                break;
-            case 6:
-                SerialHandler.portName = "COM6";
-                COMCH = true;
-                Debug.Log("COM6");
-                break;
-            case 7:
-                SerialHandler.portName = "COM7";
-                COMCH = true;
-                Debug.Log("COM7");
-                break;
-            case 8:
-                SerialHandler.portName = "COM8";
-                COMCH = true;
-                Debug.Log("COM8");
-                break;
-            case 9:
-                SerialHandler.portName = "COM9";
-                COMCH = true;
-                Debug.Log("COM9");
-                break;
-            default:
-                //Debug.Log("該当値なし");
-                break;
+            SerialHandler.portName = "COM1";
+            COMCH = true;
+            Debug.Log("COM1");
         }
-        num = 100;
+        if (Input.GetKeyDown(KeyCode.Alpha2))
+        {
+            SerialHandler.portName = "COM2";
+            COMCH = true;
+            Debug.Log("COM2");
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha3))
+        {
+            SerialHandler.portName = "COM3";
+            COMCH = true;
+            Debug.Log("COM3");
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha4))
+        {
+            SerialHandler.portName = "COM4";
+            COMCH = true;
+            Debug.Log("COM4");
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha5))
+        {
+            SerialHandler.portName = "COM5";
+            COMCH = true;
+            Debug.Log("COM5");
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha6))
+        {
+            SerialHandler.portName = "COM6";
+            COMCH = true;
+            Debug.Log("COM6");
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha7))
+        {
+            SerialHandler.portName = "COM7";
+            COMCH = true;
+            Debug.Log("COM7");
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha8))
+        {
+            SerialHandler.portName = "COM8";
+            COMCH = true;
+            Debug.Log("COM8");
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha9))
+        {
+            SerialHandler.portName = "COM9";
+            COMCH = true;
+            Debug.Log("COM9");
+        }
+
     }
 
     public void COM0()
