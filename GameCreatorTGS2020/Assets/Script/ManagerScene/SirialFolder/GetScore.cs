@@ -27,15 +27,18 @@ public class GetScore : MonoBehaviour
 
     public float noise = 3;
     // Start is called before the first frame update
-    void Start()
+    public void Start()
     {
-        ScoreSwitch = false;
+        sc = 0;
+        total = 0;
         time = 0;
-        Score = 0;
         Max = 0;
-        AVSwitch = false;
         ave = 0;
+        ScoreSwitch = false;
+        AVSwitch = false;
+        
         serialHandler.OnDataReceived += OnDataReceived;
+
         for(int lp = 0;lp < yuudati.Length; lp++)
         {
             yuudati[lp] = 0f;
@@ -53,6 +56,7 @@ public class GetScore : MonoBehaviour
         {
             if (sc != 0)
             {
+                ScoreSwitch = false;
                 ave = sc;
                 AVSwitch = true;
             }
@@ -88,9 +92,10 @@ public class GetScore : MonoBehaviour
                         Debug.Log("フェーズ3突破");
                         if (ave + noise < yuudati[11])
                         {
-                            Debug.Log("最終フェーズ突破");
+                            Debug.Log("最終フェーズ突破   " + ScoreSwitch);
                             if (ScoreSwitch == false)
                             {
+                                Debug.Log("スコアに値を代入");
                                 for (int lp = 0; lp < yuudati.Length; lp++)
                                 {
                                     total += yuudati[lp];
