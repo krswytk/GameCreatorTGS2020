@@ -2,14 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MoveTest : MonoBehaviour
+public class MoveTest2 : MonoBehaviour
 {
-    public int i ;
+    public int i;
     //public int lp = 0;
     // Start is called before the first frame update
     void Start()
     {
-       
+
         if (WebCameraController1.webcamTexture.isPlaying == false) WebCameraController1.webcamTexture.Play();
     }
 
@@ -24,12 +24,12 @@ public class MoveTest : MonoBehaviour
         i++;
         // "enemy_0" 〜 "enemy_8" の文字列をランダムで生成
         string name = "camera" + i;
-            // Spriteを取得
-            Sprite sp = GetSprite("output_images", name);
-            // SpriteRendererを取得する
-            SpriteRenderer sr = GetComponent<SpriteRenderer>();
-            // Spriteを変更する
-            sr.sprite = sp;
+        // Spriteを取得
+        Sprite sp = GetSprite("output_images", name);
+        // SpriteRendererを取得する
+        SpriteRenderer sr = GetComponent<SpriteRenderer>();
+        // Spriteを変更する
+        sr.sprite = sp;
     }
     // スプライトの取得
     // @param fileName ファイル名
