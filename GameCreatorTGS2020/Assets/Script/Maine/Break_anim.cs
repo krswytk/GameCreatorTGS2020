@@ -27,6 +27,7 @@ public class Break_anim : MonoBehaviour
     private GameObject damagePrefab;
     [SerializeField]
     private TimeManager timeManager;
+    public ShakeableTransform m_shakeable;
 
     // Start is called before the first frame update
     void Start()
@@ -76,7 +77,7 @@ public class Break_anim : MonoBehaviour
                 if (Player_Move.break_stop == false)
                 {
                     var damageParticle = GameObject.Instantiate(damagePrefab, collision.transform.position, Quaternion.identity) as GameObject;
-
+                    m_shakeable.InduceStress(1);
                     //　全体のタイムスケールを変更する
                     timeManager.SlowDown();
 
