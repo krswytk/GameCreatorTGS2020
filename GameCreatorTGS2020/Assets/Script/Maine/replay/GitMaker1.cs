@@ -47,12 +47,7 @@ public class GitMaker1 : MonoBehaviour
 
         for (int j = 0; j < 10; j++)
         {
-            /* string _fixedFirstFrameNum = (j).ToString();
-             if (j < 10)
-             {
-                 _fixedFirstFrameNum = "0" + _fixedFirstFrameNum;
-             }*/
-            File.Delete(Application.dataPath + "/Resources/output_images/camera" + j + ".png");
+            File.Delete(Application.dataPath + "/Resources/output_images/camera"+j+".png");
         }
     }
 }
