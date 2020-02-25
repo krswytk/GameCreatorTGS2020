@@ -70,5 +70,10 @@ public class WebCameraController1 : MonoBehaviour
             }
         }
     }
+    private void OnDestroy()
+    {
+        webcamTexture.Stop();
+
+    }
 
 }

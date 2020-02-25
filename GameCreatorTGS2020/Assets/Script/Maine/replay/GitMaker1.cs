@@ -21,13 +21,13 @@ public class GitMaker1 : MonoBehaviour
     void Start()
     {
         rawImage = GetComponent<RawImage>();
-        if (WebCameraController1.webcamTexture.isPlaying == false) WebCameraController1.webcamTexture.Play();
+       // if (WebCameraController1.webcamTexture.isPlaying == false) WebCameraController1.webcamTexture.Play();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (WebCameraController1.webcamTexture.isPlaying == true) WebCameraController1.webcamTexture.Stop();
+       // if (WebCameraController1.webcamTexture.isPlaying == true) WebCameraController1.webcamTexture.Stop();
 
         if (i > WebCameraController1.lp)
             i = 0;
