@@ -170,7 +170,7 @@ public class DD_Lines : DD_DrawGraphic {
 
         while (PointList.Count > m_DataDiagram.m_MaxPointNum) {
             PointList.RemoveAt(PointList.Count - 1);
-            print(PointList.Count);
+            //print(PointList.Count);
         }
 
         UpdateGeometry();

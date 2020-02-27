@@ -23,7 +23,11 @@ public class Break_anim : MonoBehaviour
 
     CameraShake shake;
 
-    
+    [SerializeField]
+    private GameObject damagePrefab;
+    [SerializeField]
+    private TimeManager timeManager;
+    public ShakeableTransform m_shakeable;
 
     // Start is called before the first frame update
     void Start()
@@ -60,7 +64,7 @@ public class Break_anim : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if ((collision.gameObject.tag == "Player_rb") && (Player_Move.time > 10))
+        if ((collision.gameObject.tag == "Player_rb") && (Player_Move.time > 2))
         {
             Debug.Log("114514");
             Player_rb.off = true;
@@ -68,10 +72,15 @@ public class Break_anim : MonoBehaviour
 
         if (sound_on == false)
         {
-            if (collision.gameObject.tag == "Player")
+            if (collision.tag == "Player")
             {
                 if (Player_Move.break_stop == false)
                 {
+                    var damageParticle = GameObject.Instantiate(damagePrefab, collision.transform.position, Quaternion.identity) as GameObject;
+                    m_shakeable.InduceStress(1);
+                    //　全体のタイムスケールを変更する
+                    timeManager.SlowDown();
+
                     //shake.Shake(1.25f, 2.1f);
                     MainSpriteRenderer.sprite = After;
                     sound_on = true;

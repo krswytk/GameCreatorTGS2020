@@ -51,77 +51,60 @@ public class Player_Move : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.A))
         {
-            //Speed = Speed - 0.1f;
-            //pos.y = Speed;
-            //myTransform.position = pos;  // 座標を設定
-            //this.gameObject.GetComponent<Rigidbody2D>().gravityScale = 1;
-            Num = 4;
+            Num = 4;//デバック用のスコア代入
         }
         if (Input.GetKey(KeyCode.B))
         {
-            Num++;
+            Num++;//デバック用のスコア代入
         }
 
-        if ((Score == 0)&&(Num<1))
+
+
+        if ((Score == 0)&&(Num<1))//スコアがまだ取れてない場合
         {
             Score = GetScore.Score;
-            if (Mathf.Floor(((Score - 1000) / 100) * 2) < 6)
+            if (Mathf.Floor(((Score - 1000) / 100) * 2) < 6)//板割りすぎないように設定
             {
-                Num = Mathf.Floor(((Score - 1000) / 100) * 2);
-                if (Num < 0) Num = 0;
+                Num = Mathf.Floor(((Score - 1000) / 100) * 2);//スコアを板の割れる枚数に変換
+                if (Num < 0) Num = 0;//スコアが0以下の場合誤作動しないように0固定
             }
             else
             {
-                Num = 5;
+                Num = 5;//上限越えたら変換
             }
         }
-        else
+        else//スコア取れた後の処理
         {
-            if ((hit < Num) && (Num != 0))
+            if ((hit < Num) && (Num != 0))//板割った枚数がスコア以下の場合
             {
-                this.gameObject.GetComponent<Rigidbody2D>().gravityScale = 1;
-                //Speed = Speed - 1.4f;
-                //pos.y = Speed;
-                //myTransform.position = pos;  // 座標を設定
+                this.gameObject.GetComponent<Rigidbody2D>().gravityScale = 1;//重力をオン
+
             }
-            if ((hit == Num) && (Num != 0))
+            if ((hit == Num) && (Num != 0))//板割った枚数がスコアと同じ場合
             {
-                break_stop = true;
-                //this.gameObject.GetComponent<Rigidbody2D>().gravityScale = 0;
+                break_stop = true;//板が割れないようにする設定をオン
                 Rigidbody2D rb = this.GetComponent<Rigidbody2D>();  // rigidbodyを取得
                 Vector2 force = new Vector2(0.0f, 0.0f);    // 力を設定
-                //rb.velocity = force;
-                //Debug.Log("fack");
             }
         }
-        //Debug.Log(myTransform.position.y);
-        //Debug.Log(Num);
-        //Debug.Log("hit:"+hit);
-        //Debug.Log(break_stop);
 
-        //////////////////////
-        ///
-        pos = myTransform.position;
-        Player_pos = pos.y;///cameramove
-        //Debug.Log(pos.y);
-        ///////////////////
+        pos = myTransform.position;//キャラの位置を取得＆記憶
+        Player_pos = pos.y;//キャラの位置を取得＆記憶
 
 
-        if ((hit == Num) && (Num != 0))
+        if ((hit == Num) && (Num != 0))//板を割り切った場合
         {
             time++;
             if (time > 150)
             {
-                feed_out = true;
+                feed_out = true;//Score画面に移動
                 time = 0;
             }
-            //this.gameObject.GetComponent<CircleCollider2D>().enabled = true;
-            //Player_rb.off = true;
         }
 
-        if(Player_rb.off == true)
+        if(Player_rb.off == true)//後ろの疑似判定がoffになったら
         {
-            this.gameObject.GetComponent<PolygonCollider2D>().enabled = true;
+            this.gameObject.GetComponent<PolygonCollider2D>().enabled = true;//キャラの判定をオンにする
         }
 
     }
