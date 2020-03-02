@@ -15,14 +15,16 @@ public class WebCameraController1 : MonoBehaviour
     public static WebCamTexture webcamTexture;
     public Color32[] color32;
 
-    public float span = 1f;
+    public float span = 0.05f;
     private float currentTime = 0f;
 
     Texture2D texture;
     void Start()
     {
         WebCamDevice[] devices = WebCamTexture.devices;
-        webcamTexture = new WebCamTexture(devices[0].name, Width, Height, FPS);
+        //webcamTexture = new WebCamTexture(devices[0].name, Width, Height, FPS);
+        webcamTexture = new WebCamTexture(devices[1].name, Width, Height, FPS);
+        //webcamTexture = new WebCamTexture(devices[2].name, Width, Height, FPS);
         // GetComponent<Renderer>().material.mainTexture = webcamTexture;
         if (webcamTexture.isPlaying == false) webcamTexture.Play();
 
@@ -61,7 +63,9 @@ public class WebCameraController1 : MonoBehaviour
 
                 //Destroy(texture);
 
-                File.WriteAllBytes(Application.dataPath + "/Resources/output_images/camera" + i + ".png", bytes);
+                //File.WriteAllBytes(Application.dataPath + "/Resources/output_images/camera" + i + ".png", bytes);
+                File.WriteAllBytes(Application.dataPath + "/Resources/camera" + i + ".png", bytes);
+
                 Debug.Log("camera" + i);
                 lp = i;
                 i++;
