@@ -99,6 +99,7 @@ public class Player_Move : MonoBehaviour
             {
                 feed_out = true;//Score画面に移動
                 time = 0;
+                feed_out = false;
             }
         }
 

@@ -98,8 +98,10 @@ public class SceneManager_v2 : MonoBehaviour
                 }
                 if (SceneManager.GetActiveScene().name == "Maine")
                 {
-
-                    FadeManager.Instance.LoadScene("Score", 2.0f);
+                    if (PlayerMove == false)
+                    {
+                        FadeManager.Instance.LoadScene("Score", 2.0f);
+                    }
 
                 }
                 if (SceneManager.GetActiveScene().name == "Score")
@@ -196,8 +198,6 @@ public class SceneManager_v2 : MonoBehaviour
         
         if (PlayerMove == true)
         {
-            Player_Move.feed_out = false;
-            PlayerMove = false;
             //Debug.Log("シーンマネＶＥＲ２で移動" +"史ね" );
             FadeManager.Instance.LoadScene("Score", 2.0f);
             
